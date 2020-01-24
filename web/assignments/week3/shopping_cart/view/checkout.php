@@ -51,14 +51,6 @@
                         <label for="clietnName">Full Name:</label>
                     </div>
                     <div>
-                        <input class="requiredinvalid" id="email" name="email" type="email" required placeholder="email@address.com" tabindex="2" title="E-mail address must be a valid e-mail address format."/>
-                        <label for="email">e-Mail Address</label>
-                    </div>
-                    <div>
-                        <label for="phone">Phone Number</label>
-                        <input class="requiredinvalid" id="phone" name="phone" type="tel" tabindex="3" required placeholder="(111) 222-3333" pattern"^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)| ([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9] [02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$" />
-                    </div>
-                    <div>
                         <input class="requiredinvalid" id="address1" name="address1" autofocus required type="text" tabindex="4" autocomplete="address1" pattern="[A-Za-z0-9\s]{5,60}" title="Address should only have Upper and Lower case letters and numbers with a space between them." />
                         <label for="address1">Address 1:</label>
                     </div>
