@@ -196,15 +196,15 @@ select {
 
 input:required:invalid,
 input:focus:invalid {
-    border: 1px solid #ff0000;
-    background-color: #ffcece;
+    border: 1px solid #581e1e;
+    background-color: #ffcaca;
 }
 
 input:required:valid,
 textarea:required:valid {
     background: #d4f8d4;
-    box-shadow: 0 0 5px #5cd053;
-    border-color: #28921f
+    box-shadow: 0 0 5px #87b384;
+    border-color: #1b3f17
 }
 
 
