@@ -60,7 +60,7 @@ switch($action) {
 		include 'view/checkout.php';
 	break;
 
-	case "confirm":
+	case "confirmorder":
 		$clientName = filter_input(INPUT_POST, 'clientName', FILTER_SANITIZE_STRING);
 		$clientAddress1 = filter_input(INPUT_POST, 'address1', FILTER_SANITIZE_STRING);
 		$clientCity = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);

@@ -19,7 +19,7 @@
         </div>	
         
 
-        <legend>Personal Information</legend>
+        <legend>Information</legend>
 
         <div class="row1">Full Name: <?php echo $clientName; ?></div>
         <div class="row2">Address 1: <?php echo $clientAddress1; ?></div>
