@@ -53,25 +53,25 @@ a.btnRemoveAction:visited {
 #btnView {
     background-color: #ffffff;
     border: #FFF 1px solid;
-    padding: 1px 10px;
-    color: grey;
-    font-size: 0.8em;
+    padding: .5px 10px;
+    color: #051f3a;
+    font-size: 1em;
     float: right;
     text-decoration: none;
-    border-radius: 4px;
-    margin: 0 5px;
+    border-radius: 5px;
+    margin: 0 6px;
 }
 
 #btnEmpty {
     background-color: #ffffff;
     border: #FFF 1px solid;
-    padding: 1px 10px;
+    padding: .5px 10px;
     color: #051f3a;
-    font-size: 0.8em;
+    font-size: 1em;
     float: right;
     text-decoration: none;
-    margin: 0 5px;
-    border-radius: 4px;
+    margin: 0 6px;
+    border-radius: 5px;
 }
 
 #btnCheckout {
@@ -130,6 +130,10 @@ a.btnRemoveAction:visited {
 .product-image {
     height: 100px;
     background-color: #FFF;
+}
+
+.image_size {
+    height: 80px;
 }
 
 .clear-float {
@@ -197,7 +201,7 @@ select {
 input:required:invalid,
 input:focus:invalid {
     border: 1px solid #581e1e;
-    background-color: #ffcaca;
+    background-color: whitesmoke;
 }
 
 input:required:valid,
