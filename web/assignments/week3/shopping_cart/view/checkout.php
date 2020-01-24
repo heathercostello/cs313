@@ -48,15 +48,15 @@
                     <legend>Personal Information</legend>
                     <!-- Personal Info -->
                     <div>
-                        <input class="requiredinvalid" id="clientName" name="clientName" autofocus required type="text" tabindex="1" autocomplete="clientName" pattern="[A-Za-z\s]{5,60}" title="Name should only have Upper and Lower case letters with a space between them." />
+                        <input class="requiredinvalid" id="clientName" name="clientName" required type="text" tabindex="1" autocomplete="clientName" pattern="[A-Za-z\s]{5,60}" title="Name should only have Upper and Lower case letters with a space between them." />
                         <label for="clietnName">Full Name:</label>
                     </div>
                     <div>
-                        <input class="requiredinvalid" id="address1" name="address1" autofocus required type="text" tabindex="4" autocomplete="address1" pattern="[A-Za-z0-9\s]{5,60}" title="Address should only have Upper and Lower case letters and numbers with a space between them." />
+                        <input class="requiredinvalid" id="address1" name="address1" required type="text" tabindex="4" pattern="[A-Za-z0-9\s]{5,60}" title="Address should only have Upper and Lower case letters and numbers with a space between them." />
                         <label for="address1">Address:</label>
                     </div>
                     <div>
-                        <input class="requiredinvalid" id="city" name="city" autofocus required type="text" tabindex="6" autocomplete="city" pattern="[A-Za-z\s]{5,60}" title="City should only have Upper and Lower case letters with a space between them." />
+                        <input class="requiredinvalid" id="city" name="city" required type="text" tabindex="6"/>
                         <label for="city">City:</label>
                     </div>
                     <div>
