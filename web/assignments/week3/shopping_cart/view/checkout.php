@@ -126,7 +126,7 @@
             }
             ?>
         </div>
-        <div class="txt-headingout"></div>
+        <div class="text-heading"></div>
     </main>
 </body>
 </html>

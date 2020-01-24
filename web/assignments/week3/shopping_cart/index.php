@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$product_array = array( array( 'id' => "1", 'name' => "Instant Pot", 'image' => "assignment-img/instantpot.png", 'price' => "100.00", 'description' => "This instant pot is a pressure cooker, a rice cooker, a slow cooker, and it can saute. It is amazing." ),  array( 'id' => "2", 'name' => "Kitchen Aid", 'image' => "assignment-img/kitchenaid.png", 'price' => "600.00", 'description' => "This is the KitchenAid that you need." ), array( 'id' => "3", 'name' => "Blend Tec", 'image' => "assignment-img/blendtec.png", 'price' => "200.00", 'description' => "The ONLY blender that you will ever need." ));
+$product_array = array( array( 'id' => "1", 'name' => "Instant Pot", 'image' => "assignment-img/instantpot.png", 'price' => "100.00"),  array( 'id' => "2", 'name' => "Kitchen Aid", 'image' => "assignment-img/kitchenaid.png", 'price' => "600.00"), array( 'id' => "3", 'name' => "Blend Tec", 'image' => "assignment-img/blendtec.png", 'price' => "200.00"));
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL){

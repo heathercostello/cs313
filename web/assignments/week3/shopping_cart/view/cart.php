@@ -46,7 +46,7 @@
 			}
 			?>
 			</div>
-			<div class="txt-headingout"><a id="btnCheckout" href="index.php?action=checkout">Check out</a></div>
+			<div class="text-heading"><a id="checkout_buttonout" href="index.php?action=checkout">Check out</a></div>
 		</main>
 </body>
 </html>

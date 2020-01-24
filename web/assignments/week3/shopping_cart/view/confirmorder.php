@@ -14,7 +14,7 @@
             if(isset($_SESSION["cart_item"])){
                 $item_total = 0;
         ?>
-        <div class="txt-headingout">
+        <div class="text-heading">
             <p>This is your order Confirmation</p>
         </div>	
         
@@ -53,7 +53,7 @@
         }
         ?>
         </div>
-        <div class="txt-headingout"><a id="btnView" href="index.php?action=browse">Browse</a></div>
+        <div class="text-heading"><a id="btnView" href="index.php?action=browse">Browse</a></div>
     </main>
 </body>
 </html>
