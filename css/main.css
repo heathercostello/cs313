@@ -1,0 +1,105 @@
+body {
+    font-size: 16px;
+    line-height: 32px;
+    font-family: Ubuntu, sans-serif;
+    color: rgb(248, 154, 126);
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 50px;
+    color: white;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: left;
+    border-bottom: 2px solid rgb(248, 154, 126);
+    color: rgb(250, 173, 137);
+}
+
+header,
+main,
+footer {
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 1000px;
+}
+
+header,
+footer,
+footer a {
+    text-align: center;
+    background-color: rgb(248, 154, 126);
+    color: whitesmoke;
+}
+
+header img {
+    width: 350px;
+    height: auto;
+    float: right;
+}
+
+footer {
+    font-size: 1.25rem;
+}
+
+body {
+    font-size: 16px;
+    line-height: 32px;
+    font-family: Ubuntu, sans-serif;
+    color: rgb(248, 154, 126);
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 50px;
+    color: white;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: left;
+    border-bottom: 2px solid rgb(248, 154, 126);
+    color: rgb(250, 173, 137);
+}
+
+header,
+main,
+footer {
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 1000px;
+}
+
+header,
+footer,
+footer a {
+    text-align: center;
+    background-color: rgb(248, 154, 126);
+    color: whitesmoke;
+}
+
+header img {
+    width: 350px;
+    height: auto;
+    float: right;
+}
+
+footer {
+    font-size: 1.25rem;
+}
+
+#assignmentLink:hover {
+    font-size: 23px;
+    opacity: 0.6;
+    transition: 0.8s;
+}
+
+#assignmentLink:visited {
+    color: rgb(75, 14, 34);
+}
+
+p {
+    color: black;
+}
