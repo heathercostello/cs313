@@ -115,6 +115,7 @@ a.btnRemoveAction:visited {
     padding: 5px;
     border: #CCC 1px solid;
     border-radius: 4px;
+    height: 450px;
 }
 
 .product-item div {
@@ -133,7 +134,7 @@ a.btnRemoveAction:visited {
 }
 
 .image_size {
-    width: 110px;
+    width: 290px;
 }
 
 .clear-float {
