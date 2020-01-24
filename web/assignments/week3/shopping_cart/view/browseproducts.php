@@ -1,10 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
+
 <head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Shopping Cart</title>
-	<link href="style.css" type="text/css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Shopping Cart">
+	<title>Product Page</title>
+	<link href="style.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 	<main>
@@ -36,7 +38,7 @@
 			?>
 				<div class="product-item">
 					<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-					<div class="product-image"><?php echo $product_array[$key]["code"]; ?><img class="image_size" src="<?php echo $product_array[$key]["image"]; ?>"></a></div>
+					<div class="product-image"><?php echo $product_array[$key]["code"]; ?><img class="image_size" src="<?php echo $product_array[$key]["image"]; ?>"></div>
 					<div><strong><?php echo $product_array[$key]["name"]; ?></strong></div>
 					<div class="product-price"><?php echo "$".$product_array[$key]["price"]; ?></div>
 					<div><input type="text" name="quantity" value="1" size="2" /><input type="submit" value="Add to cart" class="btnAddAction" /></div>

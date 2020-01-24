@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cart</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Checkout">
+    <title>Checkout</title>
     <link href="style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
@@ -15,7 +16,7 @@
                 if(isset($_SESSION["cart_item"])){
                     $item_total = 0;
             ?>	
-            <table cellpadding="10" cellspacing="1">
+            <table>
                 <tbody>
                     <tr>
                         <th style="text-align:left;"><strong>Name</strong></th>
@@ -38,7 +39,7 @@
                             ?>
 
                     <tr>
-                        <td colspan="5" align=right><strong>Total:</strong> <?php echo "$".$item_total; ?></td>
+                        <td><strong>Total:</strong> <?php echo "$".$item_total; ?></td>
                     </tr>
                 </tbody>
             </table>
