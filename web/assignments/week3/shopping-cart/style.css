@@ -128,12 +128,12 @@ a.btnRemoveAction:visited {
 }
 
 .product-image {
-    height: 100px;
+    width: 300px;
     background-color: #FFF;
 }
 
 .image_size {
-    height: 80px;
+    width: 110px;
 }
 
 .clear-float {
