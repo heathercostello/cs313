@@ -22,7 +22,7 @@
         <legend>Information</legend>
 
         <div class="row1">Full Name: <?php echo $clientName; ?></div>
-        <div class="row2">Address 1: <?php echo $clientAddress1; ?></div>
+        <div class="row2">Address: <?php echo $clientAddress1; ?></div>
         <div class="row2">City: <?php echo $clientCity; ?></div>
         <div class="row1">State: <?php echo $clientState; ?></div>
         <div class="row2">Zip Code: <?php echo $clientZipcode; ?></div>
