@@ -22,7 +22,7 @@ main {
     padding: 10px 10px;
     border-radius: 2px;
     color: #FFF;
-    background: black;
+    background: #051f3a;
     margin-bottom: 10px;
     min-height: 20px;
 }
@@ -66,7 +66,7 @@ a.btnRemoveAction:visited {
     background-color: #ffffff;
     border: #FFF 1px solid;
     padding: 1px 10px;
-    color: #ff0000;
+    color: #051f3a;
     font-size: 0.8em;
     float: right;
     text-decoration: none;
@@ -78,7 +78,7 @@ a.btnRemoveAction:visited {
     background-color: #ffffff;
     border: #FFF 1px solid;
     padding: 10px 20px;
-    color: #ff0000;
+    color: #051f3a;
     font-size: 0.8em;
     float: right;
     text-decoration: none;
@@ -161,7 +161,7 @@ input:checked~label {
 }
 
 input[type="submit"] {
-    background-color: #ee3333;
+    background-color: #081420;
     color: #fff;
     font-weight: 700;
     padding: 15px 30px;
