@@ -29,7 +29,7 @@
 		</div>
 
 		<div id="product-grid">
-			<div class="txt-heading">Products</div>
+			<div class="txt-heading">Kitchen Products</div>
 			<?php
 			
 
