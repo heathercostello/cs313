@@ -52,14 +52,6 @@ switch($action) {
 		include 'view/browseproducts.php';
 	break;
 	
-	case "details":
-		foreach($product_array as $key) {
-			if($key["code"] == $_GET["code"]) { 
-				$itemArray = $key;
-			}
-		}
-		include 'view/productdetails.php';
-	break;
 	case "view":
 		include 'view/cart.php';
 	break;

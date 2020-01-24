@@ -55,10 +55,6 @@
                         <label for="address1">Address 1:</label>
                     </div>
                     <div>
-                        <input class="requiredinvalid" id="address2" name="address2" autofocus type="text" tabindex="5" autocomplete="address2" pattern="[A-Za-z0-9\s]{5,60}" title="Address2 should only have Upper and Lower case letters with a space between them." />
-                        <label for="address2">Address 2:</label>
-                    </div>
-                    <div>
                         <input class="requiredinvalid" id="city" name="city" autofocus required type="text" tabindex="6" autocomplete="city" pattern="[A-Za-z\s]{5,60}" title="City should only have Upper and Lower case letters with a space between them." />
                         <label for="city">City:</label>
                     </div>
