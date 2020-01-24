@@ -35,7 +35,7 @@
 				foreach($product_array as $key=>$value){
 			?>
 				<div class="product-item">
-					<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+					<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["name"]; ?>">
 					<div class="product-image"><?php echo $product_array[$key]["code"]; ?><img class="image_size" src="<?php echo $product_array[$key]["image"]; ?>"></a></div>
 					<div><strong><?php echo $product_array[$key]["name"]; ?></strong></div>
 					<div class="product-price"><?php echo "$".$product_array[$key]["price"]; ?></div>
