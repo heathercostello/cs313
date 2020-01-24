@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `tblproduct` (
   UNIQUE KEY `product_code` (`code`)
 )
 
-INSERT INTO `tblproduct` (`id`, `name`, `code`, `image`, `price`) VALUES
-(1, 'Instant Pot', 'inst101', 'assignment-img/instantpot.png', 100.00),
-(2, 'Kitchen Aid', 'kitch102', 'assignment-img/kitchenaid.png', 600.00),
-(3, 'Blend Tec', 'blend103', 'assignment-img/blendtec.png', 200.00);
+INSERT INTO `tblproduct` (`id`, `name`, `image`, `price`) VALUES
+(1, 'Instant Pot', 'assignment-img/instantpot.png', 100.00),
+(2, 'Kitchen Aid', 'assignment-img/kitchenaid.png', 600.00),
+(3, 'Blend Tec', 'assignment-img/blendtec.png', 200.00);
