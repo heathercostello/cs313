@@ -16,7 +16,7 @@
                 $item_total = 0;
         ?>
         <div class="text-heading">
-            <p>This is your order Confirmation</p>
+            <p>Please Confirm Your Order</p>
         </div>	
         
 
