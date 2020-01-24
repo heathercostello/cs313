@@ -9,7 +9,7 @@
 </head>
 <body>
 	<main>
-		<div id="shopping-cart">
+		<div id="cart">
 			<div class="txt-heading">Shopping Cart <a id="btnView" href="index.php?action=browse">Browse</a><a id="btnEmpty" href="index.php?action=empty">Empty Cart </a></div>
 			<?php
 				if(isset($_SESSION["cart_item"])){

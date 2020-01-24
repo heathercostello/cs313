@@ -3,12 +3,12 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Simple PHP Shopping Cart</title>
+	<title>Shopping Cart</title>
 	<link href="style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 	<main>
-		<div id="shopping-cart">
+		<div id="cart">
 		<?php 
 			
 			if(empty($_SESSION["cart_item"])) {

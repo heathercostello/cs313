@@ -9,12 +9,12 @@ main {
     flex-direction: column;
 }
 
-#shopping-cart table {
+#cart table {
     width: 100%;
     background-color: #F0F0F0;
 }
 
-#shopping-cart table td {
+#cart table td {
     background-color: #FFFFFF;
 }
 
@@ -95,7 +95,7 @@ a.btnRemoveAction:visited {
     border-radius: 2px;
 }
 
-#shopping-cart {
+#cart {
     margin-bottom: 30px;
 }
 
