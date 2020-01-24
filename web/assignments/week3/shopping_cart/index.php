@@ -68,7 +68,7 @@ switch($action) {
 		$clientZipcode = filter_input(INPUT_POST, 'zipcode', FILTER_SANITIZE_STRING);
 	
 
-		include 'view/orderconfirm.php';
+		include 'view/confirmorder.php';
 	break;
 
 	case "empty":
