@@ -293,11 +293,6 @@ input[type="submit"] {
     width: calc(30%);
 }
 
-#confcode,
-#confprodcode {
-    width: calc(10%);
-}
-
 #confqty,
 #confprodqty {
     width: calc(25%);

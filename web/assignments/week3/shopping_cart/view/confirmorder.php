@@ -22,10 +22,7 @@
         <legend>Personal Information</legend>
 
         <div class="row1">Full Name: <?php echo $clientName; ?></div>
-        <div class="row2">e-Mail Address: <?php echo $clientEmail; ?></div>
-        <div class="row1">Phone Number: <?php echo $clientPhone; ?></div>
         <div class="row2">Address 1: <?php echo $clientAddress1; ?></div>
-        <div class="row1">Address 2: <?php echo $clientAddress2; ?></div> 
         <div class="row2">City: <?php echo $clientCity; ?></div>
         <div class="row1">State: <?php echo $clientState; ?></div>
         <div class="row2">Zip Code: <?php echo $clientZipcode; ?></div>
@@ -34,7 +31,6 @@
             <legend class="orderedTitle">Products Ordered</legend>
 
             <div class="titleRow" id="confname">Name</div>
-            <div class="titleRow" id="confcode">Code</div>
             <div class="titleRow" id="confqty">Quantity</div>
             <div class="titleRow" id="confprice">Price</div>
             
@@ -47,7 +43,6 @@
                         $tmp = "even";
                     } else { $tmp = "odd"; }
                     $display .= "<div class='prodRow$key $tmp' id='confprodname'>" .  $item['name'] . "</div>";
-                    $display .= "<div class='prodRow$key $tmp' id='confprodcode'>" .  $item['code'] . "</div>";
                     $display .= "<div class='prodRow$key $tmp' id='confprodqty'>" .  $item['quantity'] . "</div>";
                     $display .= "<div class='prodRow$key $tmp' id='confprodprice'> $".$item['price'] . "</div>";
                     $item_total += ($item["price"]*$item["quantity"]);

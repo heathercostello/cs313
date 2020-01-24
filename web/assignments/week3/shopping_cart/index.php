@@ -37,7 +37,7 @@ switch($action) {
 				$_SESSION["cart_item"] = $itemArray;
 			}
 		}
-		include 'view/browse.php';
+		include 'view/browseproducts.php';
 	break;
 	
 	case "remove":
@@ -49,7 +49,7 @@ switch($action) {
 						unset($_SESSION["cart_item"]);
 			}
 		}
-		include 'view/browse.php';
+		include 'view/browseproducts.php';
 	break;
 	
 	case "details":
@@ -58,7 +58,7 @@ switch($action) {
 				$itemArray = $key;
 			}
 		}
-		include 'view/details.php';
+		include 'view/productdetails.php';
 	break;
 	case "view":
 		include 'view/cart.php';
@@ -68,12 +68,9 @@ switch($action) {
 		include 'view/checkout.php';
 	break;
 
-	case "orderconfirm":
+	case "confirm":
 		$clientName = filter_input(INPUT_POST, 'clientName', FILTER_SANITIZE_STRING);
-		$clientEmail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-		$clientPhone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
 		$clientAddress1 = filter_input(INPUT_POST, 'address1', FILTER_SANITIZE_STRING);
-		$clientAddress2 = filter_input(INPUT_POST, 'address2', FILTER_SANITIZE_STRING);
 		$clientCity = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
 		$clientState = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING);
 		$clientZipcode = filter_input(INPUT_POST, 'zipcode', FILTER_SANITIZE_STRING);
@@ -84,11 +81,11 @@ switch($action) {
 
 	case "empty":
 		unset($_SESSION["cart_item"]);
-		include 'view/browse.php';
+		include 'view/browseproducts.php';
 	break;	
 	
 	default:
-		include 'view/browse.php';
+		include 'view/browseproducts.php';
 		break;
 
 }

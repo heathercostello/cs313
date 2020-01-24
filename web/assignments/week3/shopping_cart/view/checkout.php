@@ -42,7 +42,7 @@
                     </tr>
                 </tbody>
             </table>
-            <form id="frmCheckout" method="post" action="index.php?action=orderconfirm">
+            <form id="frmCheckout" method="post" action="index.php?action=confirm">
                 <fieldset>
                     <legend>Personal Information</legend>
                     <!-- Personal Info -->
