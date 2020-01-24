@@ -244,7 +244,7 @@ input:checked~label {
 }
 
 input[type="submit"] {
-    background-color: #ee3333;
+    background-color: #581e1e;
     color: #fff;
     font-weight: 700;
     padding: 15px 30px;
