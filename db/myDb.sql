@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS user_table CASCADE;
-DROP TABLE IF EXISTS product CASCADE;
-DROP TABLE IF EXISTS grocery_list CASCADE;
-DROP TABLE IF EXISTS food_category CASCADE;
+DROP TABLE IF EXISTS user_table;
+DROP TABLE IF EXISTS product;
+DROP TABLE IF EXISTS grocery_list;
+DROP TABLE IF EXISTS food_category;
 
 DROP SEQUENCE IF EXISTS user_table_sequence;
 DROP SEQUENCE IF EXISTS product_sequence;
@@ -10,8 +10,8 @@ DROP SEQUENCE IF EXISTS food_category_sequence;
 
 
 CREATE TABLE user_table (
-    user_id     INTEGER         CONSTRAINT user_table_pk PRIMARY KEY      NOT NULL,
-    username    VARCHAR(30)                                               NOT NULL,
+    user_id     SERIAL   PRIMARY KEY  NOT NULL,
+    username    VARCHAR(30)           NOT NULL,
     first_name  VARCHAR(30),
     last_name   VARCHAR(30)
 );
@@ -19,7 +19,7 @@ CREATE TABLE user_table (
 CREATE SEQUENCE user_table_sequence START WITH 1001;
 
 CREATE TABLE product (
-    product_id          INTEGER         CONSTRAINT product_pk PRIMARY KEY   NOT NULL,
+    product_id          SERIAL   PRIMARY KEY  NOT NULL,
     product_name        VARCHAR(30)                                         NOT NULL,
     product_quantity    INTEGER        
 );
@@ -27,21 +27,19 @@ CREATE TABLE product (
 CREATE SEQUENCE product_sequence START WITH 1001;
 
 CREATE TABLE food_category (
-    food_category_id       INTEGER         CONSTRAINT food_category_pk PRIMARY KEY    NOT NULL,
+    food_category_id       SERIAL   PRIMARY KEY  NOT NULL,
     food_category_name     VARCHAR(30)                                                NOT NULL
 );
 
 CREATE SEQUENCE food_category_sequence START WITH 1001;
 
 CREATE TABLE grocery_list (
-    grocery_list_id         INTEGER     CONSTRAINT grocery_list_pk PRIMARY KEY  NOT NULL,
+    grocery_list_id         SERIAL   PRIMARY KEY  NOT NULL,
     user_id                 INTEGER                                             NOT NULL,
     category_id             INTEGER                                             NOT NULL,
     product_id              INTEGER                                             NOT NULL,
     food_category_sequence_text               TEXT);
-    -- CONSTRAINT grocery_list_sequence_fk_1    FOREIGN KEY(user_id)               REFERENCES user_table(user_id),
-    -- CONSTRAINT grocery_list_sequence_fk_2    FOREIGN KEY(product_id)            REFERENCES product(product_id),
-    -- CONSTRAINT grocery_list_sequence_fk_3    FOREIGN KEY(food_id)     REFERENCES food_category(food_category_id));
+ 
 
 CREATE SEQUENCE grocery_list_sequence START WITH 1001;
 
