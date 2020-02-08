@@ -52,6 +52,8 @@ foreach ($db->query('SELECT now()') as $row)
 <body>
 <?php //$db->query('SELECT DISTINCT username FROM user_table') as $row; 
 echo 'name="username" value="'. $row['username'] . '" >' . $row['username'];?>
+
+<a herf="newGroceryList.html">Add new grocery list</a>
     
 </body>
 </html>
