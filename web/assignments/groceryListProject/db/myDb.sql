@@ -49,7 +49,9 @@ INSERT INTO product VALUES
 
 
 INSERT INTO grocery_list VALUES
-    (NEXTVAL('grocery_list_sequence'), '1001', '1001', 'FirstWeek', 'My List for this week.');
+    (NEXTVAL('grocery_list_sequence'), '1001', '1001', 'First Week', 'My List for this week.'),
+    (NEXTVAL('grocery_list_sequence'), '1001', '1001', 'Second Week', 'My List for this week.'),
+    (NEXTVAL('grocery_list_sequence'), '1001', '1001', 'Third Week', 'My List for this week.');
 
 
 
