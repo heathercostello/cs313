@@ -35,6 +35,7 @@ CREATE SEQUENCE food_category_sequence START WITH 1001;
 
 CREATE TABLE grocery_list (
     grocery_list_id         SERIAL   PRIMARY KEY  NOT NULL,
+    grocery_list_name            VARCHAR(30)                                         NOT NULL,
     user_id                 INTEGER                                             NOT NULL,
     category_id             INTEGER                                             NOT NULL,
     product_id              INTEGER                                             NOT NULL,

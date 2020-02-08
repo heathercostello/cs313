@@ -1,37 +1,40 @@
 <?php
 // Start the session
 session_start();
-
-if(isset($_GET['id'])){
-    $i = $_GET['id'];
-    
-} else {
-    echo "No user was selected.";
-}
-
 ?>
 <?php
 
-try
-{
-    $dbUrl = getenv('DATABASE_URL');
+// default Heroku Postgres configuration URL
+$dbUrl = getenv('DATABASE_URL');
 
-    $dbOpts = parse_url($dbUrl);
-
-    $dbHost = $dbOpts["host"];
-    $dbPort = $dbOpts["port"];
-    $dbUser = $dbOpts["user"];
-    $dbPassword = $dbOpts["pass"];
-    $dbName = ltrim($dbOpts["path"],'/');
-
-    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+if (empty($dbUrl)) {
+ // example localhost configuration URL with postgres username and a database called cs313db
+ $dbUrl = "postgres://postgres:password@localhost:5432/cs313db";
 }
-catch (PDOException $ex)
+
+$dbopts = parse_url($dbUrl);
+
+print "<p>$dbUrl</p>\n\n";
+
+$dbHost = $dbopts["host"];
+$dbPort = $dbopts["port"];
+$dbUser = $dbopts["user"];
+$dbPassword = $dbopts["pass"];
+$dbName = ltrim($dbopts["path"],'/');
+
+print "<p>pgsql:host=$dbHost;port=$dbPort;dbname=$dbName</p>\n\n";
+
+try {
+ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+}
+catch (PDOException $ex) {
+ print "<p>error: $ex->getMessage() </p>\n\n";
+ die();
+}
+
+foreach ($db->query('SELECT now()') as $row)
 {
-    echo 'Error!: ' . $ex->getMessage();
-    die();
+ print "<p>$row[0]</p>\n\n";
 }
 
 ?>
@@ -43,19 +46,12 @@ catch (PDOException $ex)
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User Grocery Lists</title>
 </head>
+
+
+<h1>Grocery Lists for</h1> 
 <body>
-
-    <?php
-
-        $db->query('SELECT * FROM user_table WHERE id = ' . $i . "'") as $row
-
-        echo '<p><strong>' . $row['username'] . ' ' . $row['first_name'] . ':' . $row['last_name'];
-        echo '</strong>';
-        echo  ' - ' . '"' . $row['content'] . '"';
-        echo '</p>';
-
-    ?>
-
+<?php $db->query('SELECT DISTINCT username FROM user_table') as $row; 
+echo 'name="username" value="'. $row['username'] . '" >' . $row['username'];?>
     
 </body>
 </html>
