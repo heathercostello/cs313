@@ -109,5 +109,7 @@ echo "<h2>Your Input:</h2>";
 echo $list;
 echo "<br>";
 ?>
+
+<a href="userGroceryList.php"><p>Go back and view the grocery lists</p></a>
 </body>
 </html>
