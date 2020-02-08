@@ -88,8 +88,6 @@ function test_input($data) {
   return $data;
 }
 ?>
-
-<h2>PHP Form Validation Example</h2>
 <p><span class="error">* required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   User Name: <input type="text" name="userName" value="<?php echo $userName;?>">
@@ -103,7 +101,7 @@ function test_input($data) {
   <br><br>
   Grocery List: <textarea name="list" rows="5" cols="40"><?php echo $list;?></textarea>
   <br><br>
-  <input type="submit" name="submit" value="Submit">  
+  <input type="submit" name="submit" value="Confirm List Below">  
 </form>
 
 <?php
