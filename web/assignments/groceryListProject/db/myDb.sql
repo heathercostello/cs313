@@ -46,7 +46,9 @@ CREATE SEQUENCE grocery_list_sequence START WITH 1001;
 /* SOME FICTIONAL INFO TO INSERT */ 
 
 INSERT INTO user_table VALUES
-    (NEXTVAL('user_table_sequence'), 'heathercostello', 'Heather', 'Costello');
+    (NEXTVAL('user_table_sequence'), 'heathercostello', 'Heather', 'Costello'),
+    (NEXTVAL('user_table_sequence'), 'josephcostello', 'Joseph', 'Costello'),
+    (NEXTVAL('user_table_sequence'), 'charliecostello', 'Charlie', 'Costello');
     
 
 INSERT INTO product VALUES
