@@ -48,7 +48,7 @@ foreach ($db->query('SELECT now()') as $row)
 </head>
 
 
-<h1>Grocery Lists for</h1> 
+<h1>Grocery Lists for User</h1> 
 <body>
 <?php //$db->query('SELECT DISTINCT username FROM user_table') as $row; 
 echo 'name="username" value="'. $row['username'] . '" >' . $row['username'];?>
