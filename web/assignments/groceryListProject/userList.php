@@ -55,7 +55,7 @@ foreach ($db->query('SELECT now()') as $row)
                 echo '<input type="radio" name="username" value="'. $row['username'] . '" >' . $row['username'] . '</br>';
             }
             ?>
-            <input type="View Grocery Lists">
+            <input type="submit" name="View Grocery Lists">
         </form>
         
         
