@@ -50,7 +50,7 @@ foreach ($db->query('SELECT now()') as $row)
 
 <h1>Grocery Lists for</h1> 
 <body>
-<?php $db->query('SELECT DISTINCT username FROM user_table') as $row; 
+<?php //$db->query('SELECT DISTINCT username FROM user_table') as $row; 
 echo 'name="username" value="'. $row['username'] . '" >' . $row['username'];?>
     
 </body>
