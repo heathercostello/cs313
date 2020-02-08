@@ -50,8 +50,14 @@ foreach ($db->query('SELECT now()') as $row)
 
 <h1>Grocery Lists for User</h1> 
 <body>
-<?php //$db->query('SELECT DISTINCT username FROM user_table') as $row; 
-echo 'name="username" value="'. $row['username'] . '" >' . $row['username'];?>
+<form action="userGroceryList.php" method="post">
+            <?php
+            foreach ($db->query('SELECT DISTINCT grocery_list_name FROM grocery_list') as $row) {                
+                echo '<input type="radio" name="grocery_list_name" value="'. $row['grocery_list_name'] . '" >' . $row['grocery_list_name'] . '</br>';
+            }
+            ?>
+            <input type="submit" value="View List">
+        </form>
 
 <a herf="newGroceryList.html">Add new grocery list</a>
     

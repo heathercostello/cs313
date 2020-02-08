@@ -26,19 +26,11 @@ CREATE TABLE product (
 
 CREATE SEQUENCE product_sequence START WITH 1001;
 
-CREATE TABLE food_category (
-    food_category_id       SERIAL   PRIMARY KEY  NOT NULL,
-    food_category_name     VARCHAR(30)                                                NOT NULL
-);
-
-CREATE SEQUENCE food_category_sequence START WITH 1001;
-
 CREATE TABLE grocery_list (
     grocery_list_id         SERIAL   PRIMARY KEY  NOT NULL,
-    grocery_list_name            VARCHAR(30)                                         NOT NULL,
     user_id                 INTEGER                                             NOT NULL,
-    category_id             INTEGER                                             NOT NULL,
     product_id              INTEGER                                             NOT NULL,
+    grocery_list_name       VARCHAR(300)                                        NOT NULL,
     food_category_sequence_text               TEXT);
  
 
@@ -55,9 +47,16 @@ INSERT INTO user_table VALUES
 INSERT INTO product VALUES
     (NEXTVAL('product_sequence'), 'brown rice', '2');
 
-INSERT INTO food_category VALUES
-    (NEXTVAL('food_category_sequence'), 'fruit');
 
 INSERT INTO grocery_list VALUES
-    (NEXTVAL('grocery_list_sequence'), '1001', '1001', '1001', 'My List for this week.');
+    (NEXTVAL('grocery_list_sequence'), '1001', '1001', 'FirstWeek', 'My List for this week.');
+
+
+
+    -- CREATE TABLE food_category (
+--     food_category_id       SERIAL   PRIMARY KEY  NOT NULL,
+--     food_category_name     VARCHAR(30)                                                NOT NULL
+-- );
+
+-- CREATE SEQUENCE food_category_sequence START WITH 1001;
     

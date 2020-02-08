@@ -58,29 +58,7 @@ foreach ($db->query('SELECT now()') as $row)
             <input type="submit" value="View Grocery Lists">
         </form>
         
-        
-        <?php
-        if (isset($_POST['username'])) {
-            echo '<p> In If Statement</p>';
-            $string = 'SELECT * FROM user_table WHERE username = ' . '"' . $_POST['username'] . '"';
-            echo $string;
-            foreach ($db->query($string) as $row ) {
-                echo '<a href="userGroceryLists.php?id="' . $_POST['id'] . '"><p><strong>' . $row['username'] . ' ' . $row['first_name'] . ':' . $row['last_name'];
-                echo '</strong></a></p>';
-                /* echo  ' - ' . '"' . $row['content'] . '"';
-                echo '</p>'; */
-            }
-        }
-        else {
-            echo '<p> In Else Statement</p>';
-            foreach ($db->query('SELECT * FROM user_table') as $row ) {
-                echo '<p><strong>' . $row['username'] . ' ' . $row['first_name'] . ':' . $row['last_name'];
-                echo '</strong>';
-                echo  ' - ' . '"' . $row['content'] . '"';
-                echo '</p>';
-            }
-        }
-        ?>
+    
         
 </body>
 </html>
