@@ -106,12 +106,6 @@ function test_input($data) {
 
 <?php
 echo "<h2>Your Input:</h2>";
-echo $userName;
-echo "<br>";
-echo $firstName;
-echo "<br>";
-echo $lastName;
-echo "<br>";
 echo $list;
 echo "<br>";
 ?>
