@@ -18,18 +18,6 @@ grocery_list_name       VARCHAR(30)               NOT NULL,
 list_content            TEXT                      NOT NULL
 );
  
- -- CREATE SEQUENCE user_table_sequence START WITH 1001;
---CREATE SEQUENCE grocery_list_sequence START WITH 1001;
-
--- CREATE TABLE product (
---     product_id          SERIAL   PRIMARY KEY  NOT NULL,
---     product_name        VARCHAR(30)           NOT NULL,
---     product_quantity    INTEGER        
--- );
-
--- CREATE SEQUENCE product_sequence START WITH 1001;
-
-/* SOME FICTIONAL INFO TO INSERT */ 
 
 INSERT INTO user_table(username, first_name, last_name) VALUES
 ('heatherfeather', 'heather', 'costello'),

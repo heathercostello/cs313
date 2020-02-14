@@ -18,6 +18,8 @@ $stmt->bindValue(':id', $user_id, PDO::PARAM_INT);
 $stmt->execute();
 $list_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$username = $grocery_list_rows[0]['username'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,9 +30,16 @@ $list_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>User Grocery Lists</title>
 </head>
 
-
-<h1>Grocery List for <?php echo $username ?></h1> 
 <body>
+<h1>Grocery Lists for <?php echo $username ?></h1> 
+
+<?php
+foreach ($grocery_list_rows as $grocery_list_row)
+{
+    $content = $grocery_list_row['list_content'];
+    echo "<p>$list_content</p>";
+}
+?>
 
 <!-- old -->
 <form action="userGroceryList.php" method="post">
