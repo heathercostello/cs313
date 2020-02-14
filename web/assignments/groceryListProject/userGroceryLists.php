@@ -23,7 +23,7 @@ $user_id = htmlspecialchars($_GET['user_id']);
 </head>
 
 
-<h1>Grocery Lists for <?php echo $id ?></h1> 
+<h1>Grocery Lists for <?php echo $user_id ?></h1> 
 <body>
 
 <!-- old -->
