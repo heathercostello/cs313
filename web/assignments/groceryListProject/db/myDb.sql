@@ -14,7 +14,7 @@ CREATE TABLE user_table (
 CREATE TABLE grocery_list (
 grocery_list_id         SERIAL   PRIMARY KEY  NOT NULL,
 user_table_id           INTEGER                   NOT NULL    REFERENCES user_table(id),
-grocery_list_name       VARCHAR(30)               NOT NULL,
+grocery_list_name       VARCHAR(30)               NULL,
 list_content            TEXT                      NOT NULL
 );
  
