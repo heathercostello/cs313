@@ -34,7 +34,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $firstname = $user['first_name'];
             $lastname = $user['last_name'];
 
-            echo "<li><p><a href='userGroceryLists.php?=id=$id'>$username - $firstname $lastname<p></li>";
+            echo "<li><p><a href='userGroceryLists.php?user_id=$id'>$username - $firstname $lastname<p></li>";
         }
 
         ?>

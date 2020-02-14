@@ -7,11 +7,11 @@ require('dbConnect.php');
 $db = get_db();
 ?>
 <?php
-if (!isset($_GET['id']))
+if (!isset($_GET['user_id']))
 {
     die("Error, user id not specified...");
 }
-$id = htmlspecialchars($_GET['id']);
+$user_id = htmlspecialchars($_GET['user_id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
