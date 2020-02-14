@@ -6,6 +6,13 @@ session_start();
 require('dbConnect.php');
 $db = get_db();
 ?>
+<?php
+if (!isset($_GET['user_table_id']))
+{
+    die("Error, user id not specified...");
+}
+$user_table_id = htmlspecialchars($_GET['user_table_id']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +23,10 @@ $db = get_db();
 </head>
 
 
-<h1>Grocery Lists for User</h1> 
+<h1>Grocery Lists for <?php echo $user_table_id ?></h1> 
 <body>
+
+<!-- old -->
 <form action="userGroceryList.php" method="post">
             <?php
             foreach ($db->query('SELECT DISTINCT grocery_list_name FROM grocery_list') as $row) {                
