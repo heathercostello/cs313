@@ -13,8 +13,10 @@ $user_id = htmlspecialchars($_GET['user_id']);
 require('dbConnect.php');
 $db = get_db();
 
-$stmt = $db->prepare('SELECT u.username, g.list_content FROM grocery_list g JOIN user_table u ON g.user_table_id = u.id WHERE u.id=:id');
-$stmt->bindValue(':id', $user_table_id, PDO::PARAM_INT);
+$stmt = $db->prepare('SELECT u.username, g.grocery_list_name, g.list_content FROM grocery_list g 
+JOIN user_table u ON g.user_table_id = u.id
+WHERE u.id =:id');
+$stmt->bindValue(':id', $user_id, PDO::PARAM_INT);
 $stmt->execute();
 $grocery_list_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
