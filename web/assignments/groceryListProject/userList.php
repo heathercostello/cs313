@@ -3,29 +3,15 @@
 session_start();
 ?>
 <?php
+require('dbConnect.php');
+$db = get_db();
 
-try
-{
-    $dbUrl = getenv('DATABASE_URL');
+$query = 'SELECT id, code, name FROM course';
+$stmt = $db->prepare($query);
+$stmt->execute();
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $dbOpts = parse_url($dbUrl);
-
-    $dbHost = $dbOpts["host"];
-    $dbPort = $dbOpts["port"];
-    $dbUser = $dbOpts["user"];
-    $dbPassword = $dbOpts["pass"];
-    $dbName = ltrim($dbOpts["path"],'/');
-
-    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-    echo 'Error!: ' . $ex->getMessage();
-    die();
-}
-
+//SELECT id, username, first_name, last_name FROM user_table;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +23,25 @@ catch (PDOException $ex)
 </head>
 <body>
     <h1>Grocery List Users</h1>
+        <ul>
+        <?php
 
+        foreach ($users as $user)
+        {
+            $id = $user['id'];
+            $username = $user['username'];
+            $firstname = $user['first_name'];
+            $lastname = $user['last_name'];
+
+            echo "<li><p>$username - $firstname $lastname<p></li>";
+        }
+
+        ?>
+        </ul>
+
+
+
+<!-- my old -->
         <form action="userList.php" method="post">
             <?php
             foreach ($db->query('SELECT DISTINCT username FROM user_table') as $row) {                
