@@ -7,11 +7,11 @@ require('dbConnect.php');
 $db = get_db();
 ?>
 <?php
-if (!isset($_GET['user_table_id']))
+if (!isset($_GET['id']))
 {
     die("Error, user id not specified...");
 }
-$user_table_id = htmlspecialchars($_GET['user_table_id']);
+$id = htmlspecialchars($_GET['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@ $user_table_id = htmlspecialchars($_GET['user_table_id']);
 </head>
 
 
-<h1>Grocery Lists for <?php echo $user_table_id ?></h1> 
+<h1>Grocery Lists for <?php echo $id ?></h1> 
 <body>
 
 <!-- old -->
