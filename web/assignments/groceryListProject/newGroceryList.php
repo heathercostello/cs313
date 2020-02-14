@@ -14,7 +14,14 @@ $db = get_db();
 //SELECT id, username, first_name, last_name FROM user_table;
 ?>
 
+<?php
+$user_id = htmlspecialchars($_POST['user_id']);
+$content = htmlspecialchars($_POST['grocery_list_content']);
+
+echo "$course_id\n";
+echo $content;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

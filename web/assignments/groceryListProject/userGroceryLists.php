@@ -33,7 +33,7 @@ $username = $grocery_list_rows[0]['username'];
 </head>
 
 <body>
-<h1>Grocery Lists for <?php echo $username ?></h1> 
+<h1>Grocery List for <?php echo $username ?></h1> 
 
 <?php
 foreach ($grocery_list_rows as $grocery_list_row)
@@ -43,17 +43,12 @@ foreach ($grocery_list_rows as $grocery_list_row)
 }
 ?>
 
-<!-- old -->
-<!-- <form action="userGroceryList.php" method="post">
-            <?php
-            foreach ($db->query('SELECT DISTINCT grocery_list_name FROM grocery_list') as $row) {                
-                echo '<input type="radio" name="grocery_list_name" value="'. $row['grocery_list_name'] . '" >' . $row['grocery_list_name'] . '</br>';
-            }
-            ?>
-            <input type="submit" value="View List">
-        </form>
+<form method="post" action="newGroceryList.php">
+    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+    <textarea name="grocery_list_content"></textarea>
+    <input type="submit" value="Create List">
+</form>
 
-<a herf="newGroceryList.html">Add new grocery list</a> -->
     
 </body>
 </html>

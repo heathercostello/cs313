@@ -36,26 +36,4 @@ WHERE u.username = 'heatherfeather';
 SELECT u.username, g.grocery_list_name, g.list_content FROM grocery_list g 
 JOIN user_table u ON g.user_table_id = u.id
 WHERE u.id = '1';
-
-
--- INSERT INTO user_table VALUES
---     (NEXTVAL('user_table'), 'heathercostello', 'Heather', 'Costello'),
---     (NEXTVAL('user_table'), 'josephcostello', 'Joseph', 'Costello'),
---     (NEXTVAL('user_table'), 'charliecostello', 'Charlie', 'Costello');
-    
-
-
--- INSERT INTO grocery_list VALUES
---     (NEXTVAL('grocery_list'), '1001', '1001', 'First Week', 'My List for this week.'),
---     (NEXTVAL('grocery_list'), '1001', '1001', 'Second Week', 'My List for this week.'),
---     (NEXTVAL('grocery_list'), '1001', '1001', 'Third Week', 'My List for this week.');
-
-
-
-    -- CREATE TABLE food_category (
---     food_category_id       SERIAL   PRIMARY KEY  NOT NULL,
---     food_category_name     VARCHAR(30)                                                NOT NULL
--- );
-
--- CREATE SEQUENCE food_category_sequence START WITH 1001;
     
