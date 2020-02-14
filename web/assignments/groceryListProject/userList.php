@@ -4,6 +4,7 @@ session_start();
 ?>
 <?php
 
+
 try
 {
     $dbUrl = getenv('DATABASE_URL');
@@ -26,8 +27,8 @@ catch (PDOException $ex)
     die();
 }
 
-require('dbConnect.php');
-$db = get_db();
+// require('dbConnect.php');
+// $db = get_db();
 
 $query = 'SELECT id, code, name FROM course';
 $stmt = $db->prepare($query);
