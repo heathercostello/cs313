@@ -45,6 +45,10 @@ SELECT u.username, g.list_content FROM grocery_list g
 JOIN user_table u ON g.user_table_id = u.id
 WHERE u.username = 'heatherfeather';
 
+SELECT u.username, g.list_content FROM grocery_list g 
+JOIN user_table u ON g.user_table_id = u.id
+WHERE u.id = '1';
+
 
 -- INSERT INTO user_table VALUES
 --     (NEXTVAL('user_table'), 'heathercostello', 'Heather', 'Costello'),

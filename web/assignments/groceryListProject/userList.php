@@ -39,20 +39,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         ?>
         </ul>
-
-
-
-<!-- my old -->
-        <form action="userList.php" method="post">
-            <?php
-            foreach ($db->query('SELECT DISTINCT username FROM user_table') as $row) {                
-                echo '<input type="radio" name="username" value="'. $row['username'] . '" >' . $row['username'] . '</br>';
-            }
-            ?>
-            <input type="submit" value="View Grocery Lists">
-        </form>
-        
-    
+         
         
 </body>
 </html>
