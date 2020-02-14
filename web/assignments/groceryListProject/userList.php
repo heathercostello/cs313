@@ -30,7 +30,7 @@ catch (PDOException $ex)
 // require('dbConnect.php');
 // $db = get_db();
 
-$query = 'SELECT id, code, name FROM course';
+$query = 'SELECT id, username, first_name, last_name FROM user_table';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
