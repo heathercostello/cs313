@@ -14,9 +14,9 @@ require('dbConnect.php');
 $db = get_db();
 
 $stmt = $db->prepare('SELECT u.username, g.list_content FROM grocery_list g JOIN user_table u ON g.user_table_id = u.id WHERE u.id=:id');
-$stmt->bindValue(':id', $user_id, PDO::PARAM_INT);
+$stmt->bindValue(':id', $user_table_id, PDO::PARAM_INT);
 $stmt->execute();
-$list_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$grocery_list_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $username = $grocery_list_rows[0]['username'];
 
@@ -42,7 +42,7 @@ foreach ($grocery_list_rows as $grocery_list_row)
 ?>
 
 <!-- old -->
-<form action="userGroceryList.php" method="post">
+<!-- <form action="userGroceryList.php" method="post">
             <?php
             foreach ($db->query('SELECT DISTINCT grocery_list_name FROM grocery_list') as $row) {                
                 echo '<input type="radio" name="grocery_list_name" value="'. $row['grocery_list_name'] . '" >' . $row['grocery_list_name'] . '</br>';
@@ -51,7 +51,7 @@ foreach ($grocery_list_rows as $grocery_list_row)
             <input type="submit" value="View List">
         </form>
 
-<a herf="newGroceryList.html">Add new grocery list</a>
+<a herf="newGroceryList.html">Add new grocery list</a> -->
     
 </body>
 </html>
