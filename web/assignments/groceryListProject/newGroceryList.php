@@ -18,7 +18,7 @@ $db = get_db();
 $user_id = htmlspecialchars($_POST['user_id']);
 $content = htmlspecialchars($_POST['grocery_list_content']);
 
-echo "$course_id\n";
+echo "$user_id\n";
 echo $content;
 ?>
 
