@@ -28,9 +28,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <form method="post" action="newUser.php">
         <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-        User Name: <input type="text" name="userName" value="<?php echo $userName;?>">
-        First Name: <input type="text" name="firstName" value="<?php echo $firstName;?>">
-        Last Name: <input type="text" name="lastname" value="<?php echo $lastname;?>">
+        User Name: <input type="text" name="userName" value="<?php echo $userName;?>"><br>
+        First Name: <input type="text" name="firstName" value="<?php echo $firstName;?>"><br>
+        Last Name: <input type="text" name="lastname" value="<?php echo $lastname;?>"><br>
         <input type="submit" value="Create User">
         </form>
         </ul>
