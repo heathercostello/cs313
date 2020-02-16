@@ -39,13 +39,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         ?>
         </ul>
-
-<h2>Create new user</h2>
-     <form method="post" action="userList.php">
-    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-    <textarea name="list_content"></textarea>
-    <input type="submit" value="Create User">
-</form>
+<?php
+echo "<h2><a href='newUser.php'>Create new user</a></h2>";
+?>
          
         
 </body>
