@@ -4,11 +4,11 @@ session_start();
 ?>
 
 <?php
-if (!isset($_GET['user_id']))
+if (!isset($_GET['user_table_id']))
 {
     die("Error, user id not specified...");
 }
-$user_id = htmlspecialchars($_GET['user_id']);
+$user_table_id = htmlspecialchars($_GET['user_table_id']);
 
 require('dbConnect.php');
 $db = get_db();
@@ -16,7 +16,7 @@ $db = get_db();
 $stmt = $db->prepare('SELECT u.username, g.grocery_list_name, g.list_content FROM grocery_list g 
 JOIN user_table u ON g.user_table_id = u.id
 WHERE u.id =:id');
-$stmt->bindValue(':id', $user_id, PDO::PARAM_INT);
+$stmt->bindValue(':id', $user_table_id, PDO::PARAM_INT);
 $stmt->execute();
 $grocery_list_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -45,7 +45,7 @@ foreach ($grocery_list_rows as $grocery_list_row)
 ?>
 
 <form method="post" action="newGroceryList.php">
-    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+    <input type="hidden" name="user_table_id" value="<?php echo $user_table_id; ?>">
     <textarea name="grocery_list_content"></textarea>
     <input type="submit" value="Create List">
 </form>
