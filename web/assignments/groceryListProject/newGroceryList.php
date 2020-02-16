@@ -14,7 +14,7 @@ $stmt->bindValue(':user_table_id', $user_table_id, PDO::PARAM_INT);
 $stmt->bindValue(':list_content', $list_content, PDO::PARAM_STR);
 $stmt->execute();
 
-$new_page = "userGroceryLists.php?user_id=$user_id";
+$new_page = "userGroceryLists.php?user_id=$id";
 header("Location: $new_page");
 die();
 
