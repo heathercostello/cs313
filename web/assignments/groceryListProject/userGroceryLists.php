@@ -38,9 +38,9 @@ $username = $grocery_list_rows[0]['username'];
 <?php
 foreach ($grocery_list_rows as $grocery_list_row)
 {
+    $name = $grocery_list_row['grocery_list_name'];
     $content = $grocery_list_row['list_content'];
-    $content = $grocery_list_row['list_content'];
-    echo "<p>$content</p>";
+    echo "<p>$name<br> $content</p>";
 }
 ?>
 
