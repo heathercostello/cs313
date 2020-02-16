@@ -8,12 +8,12 @@ $list_content = htmlspecialchars($_POST['list_content']);
 // echo "$user_id\n";
  echo $list_content;
 
-$stmt = $db->prepare('INSERT INTO grocery_list(user_table_id, list_content) VALUES
-(:user_table_id, :list_content);');
+$stmt = $db->prepare('INSERT INTO grocery_list(user_id, list_content) VALUES
+(:user_id, :list_content);');
 
 echo "ONE";
 
-$stmt->bindValue(':user_table_id', $user_table_id, PDO::PARAM_INT);
+$stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 
 echo "TWO";
 
