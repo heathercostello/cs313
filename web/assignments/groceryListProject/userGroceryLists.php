@@ -13,7 +13,7 @@ $user_id = htmlspecialchars($_GET['user_id']);
 require('dbConnect.php');
 $db = get_db();
 
-$stmt = $db->prepare('SELECT u.username, g.grocery_list_name, g.list_content FROM grocery_list g 
+$stmt = $db->prepare('SELECT u.username, g.list_content FROM grocery_list g 
 JOIN user_table u ON g.user_table_id = u.id
 WHERE u.id =:id');
 $stmt->bindValue(':id', $user_id, PDO::PARAM_INT);
@@ -38,9 +38,9 @@ $username = $grocery_list_rows[0]['username'];
 <?php
 foreach ($grocery_list_rows as $grocery_list_row)
 {
-    $name = $grocery_list_row['grocery_list_name'];
+    // $name = $grocery_list_row['grocery_list_name'];
     $content = $grocery_list_row['list_content'];
-    echo "<p><b>Grocery List:</b> $name<br> <b>Items:</b> $content</p>";
+    echo "<p><b>Grocery List Items:</b> $content</p>";
 }
 ?>
 

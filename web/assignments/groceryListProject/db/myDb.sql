@@ -14,7 +14,7 @@ CREATE TABLE user_table (
 CREATE TABLE grocery_list (
 grocery_list_id         SERIAL   PRIMARY KEY  NOT NULL,
 user_table_id           INTEGER                   NOT NULL    REFERENCES user_table(id),
-grocery_list_name       VARCHAR(30)               NULL,
+-- grocery_list_name       VARCHAR(30)               NULL,
 list_content            TEXT                      NOT NULL
 );
  
@@ -24,16 +24,16 @@ INSERT INTO user_table(username, first_name, last_name) VALUES
 ('jojo', 'joseph', 'costello'),
 ('yellowfive', 'courtney', 'pelessie');
 
-INSERT INTO grocery_list(user_table_id, grocery_list_name, list_content) VALUES
-('1', 'weekOneHeather', 'green onions, milk, eggs'),
-('2', 'weekOneJoseph', 'bread, milk, eggs'),
-('3', 'weekOneCourtney', 'crackers, icecream');
+INSERT INTO grocery_list(user_table_id, list_content) VALUES
+('1', 'green onions, milk, eggs'),
+('2', 'bread, milk, eggs'),
+('3', 'crackers, icecream');
 
 SELECT u.username, g.list_content FROM grocery_list g 
 JOIN user_table u ON g.user_table_id = u.id
 WHERE u.username = 'heatherfeather';
 
-SELECT u.username, g.grocery_list_name, g.list_content FROM grocery_list g 
+SELECT u.username, g.list_content FROM grocery_list g 
 JOIN user_table u ON g.user_table_id = u.id
 WHERE u.id = '1';
     
