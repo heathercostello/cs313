@@ -40,7 +40,7 @@ foreach ($grocery_list_rows as $grocery_list_row)
 {
     $name = $grocery_list_row['grocery_list_name'];
     $content = $grocery_list_row['list_content'];
-    echo "<p>$name<br> $content</p>";
+    echo "<p>Grocery List:$name<br> Items:$content</p>";
 }
 ?>
 
