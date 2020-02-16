@@ -20,28 +20,20 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Grocery List Users</title>
+    <title>Create Grocery List Users</title>
 </head>
 <body>
-    <h1>Current Grocery List Users</h1>
+    <h1>Create a Grocery List User</h1>
         <ul>
-        <?php
 
-        foreach ($users as $user)
-        {
-            $id = $user['id'];
-            $username = $user['username'];
-            $firstname = $user['first_name'];
-            $lastname = $user['last_name'];
-
-            echo "<li><p><a href='userGroceryLists.php?user_id=$id'>$username - $firstname $lastname<p></li>";
-        }
-
-        ?>
+        <form method="post" action="newUser.php">
+        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+        User Name: <input type="text" name="userName" value="<?php echo $userName;?>">
+        First Name: <input type="text" name="firstName" value="<?php echo $firstName;?>">
+        Last Name: <input type="text" name="lastname" value="<?php echo $lastname;?>">
+        <input type="submit" value="Create User">
+        </form>
         </ul>
-<?php
-echo "<h2><a href='newUser.php'>Create new user</a></h2>";
-?>
          
         
 </body>
