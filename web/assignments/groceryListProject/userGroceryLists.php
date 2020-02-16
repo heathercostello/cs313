@@ -16,7 +16,7 @@ $db = get_db();
 $stmt = $db->prepare('SELECT u.username, g.grocery_list_name, g.list_content FROM grocery_list g 
 JOIN user_table u ON g.user_table_id = u.id
 WHERE u.id =:id');
-$stmt->bindValue(':id', $user_table_id, PDO::PARAM_INT);
+$stmt->bindValue(':id', $user_id, PDO::PARAM_INT);
 $stmt->execute();
 $grocery_list_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -38,9 +38,9 @@ $username = $grocery_list_rows[0]['username'];
 <?php
 foreach ($grocery_list_rows as $grocery_list_row)
 {
-    $name = $grocery_list_row['grocery_list_name'];
     $content = $grocery_list_row['list_content'];
-    echo "<p>$name <br> $content</p>";
+    $content = $grocery_list_row['list_content'];
+    echo "<p>$content</p>";
 }
 ?>
 
