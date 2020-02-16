@@ -26,7 +26,7 @@ echo "THREE";
 echo "FOUR";
 
 
-$new_page = "userGroceryLists.php?user_id=$id";
+$new_page = "userGroceryLists.php?user_id=$user_id";
 header("Location: $new_page");
 // die();
 
