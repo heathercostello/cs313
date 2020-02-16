@@ -46,7 +46,7 @@ foreach ($grocery_list_rows as $grocery_list_row)
 
 <form method="post" action="newGroceryList.php">
     <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-    <textarea name="grocery_list_content"></textarea>
+    <textarea name="list_content"></textarea>
     <input type="submit" value="Create List">
 </form>
 
