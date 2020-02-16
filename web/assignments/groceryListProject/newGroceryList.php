@@ -2,7 +2,7 @@
 $user_id = htmlspecialchars($_POST['user_id']);
 $list_content = htmlspecialchars($_POST['list_content']);
 
-echo "user_id\n";
+echo "$user_id\n";
 echo $list_content;
 
 // require('dbConnect.php');
