@@ -4,11 +4,11 @@ session_start();
 ?>
 
 <?php
-if (!isset($_GET['user_table_id']))
+if (!isset($_GET['user_id']))
 {
     die("Error, user id not specified...");
 }
-$user_table_id = htmlspecialchars($_GET['user_table_id']);
+$user_id = htmlspecialchars($_GET['user_id']);
 
 require('dbConnect.php');
 $db = get_db();
