@@ -33,7 +33,7 @@ $username = $grocery_list_rows[0]['username'];
 </head>
 
 <body>
-<h1>Grocery List for <?php echo $username ?></h1> 
+<h1>Grocery Lists for <?php echo $username ?></h1> 
 
 <?php
 foreach ($grocery_list_rows as $grocery_list_row)
@@ -43,7 +43,7 @@ foreach ($grocery_list_rows as $grocery_list_row)
     echo "<p><b>Grocery List Items:</b> $content</p>";
 }
 ?>
-
+<h2>Create a new grocery list</h2>
 <form method="post" action="newGroceryList.php">
     <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
     <textarea name="list_content"></textarea>
