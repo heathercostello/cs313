@@ -21,7 +21,7 @@ $stmt->bindValue(':list_content', $list_content, PDO::PARAM_STR);
 
 echo "THREE";
 
-$stmt->execute();
+// $stmt->execute();
 
 echo "FOUR";
 
