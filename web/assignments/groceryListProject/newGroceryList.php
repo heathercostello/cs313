@@ -1,18 +1,21 @@
 <?php
-$user_table_id = htmlspecialchars($_POST['user_table_id']);
-$content = htmlspecialchars($_POST['grocery_list_content']);
+$user_id = htmlspecialchars($_POST['user_id']);
+$list_content = htmlspecialchars($_POST['list_content']);
 
-require('dbConnect.php');
-$db = get_db();
+echo "user_id\n";
+echo $list_content;
 
-$stmt = $db->prepare('INSERT INTO grocery_list(user_table_id, content) VALUES
-(:user_table_id, :content);');
-$stmt->bindValue(':user_table_id', $user_table_id, PDO::PARAM_INT);
-$stmt->bindValue(':content', $content, PDO::PARAM_STR);
-$stmt->execute();
+// require('dbConnect.php');
+// $db = get_db();
 
-$new_page = "userGroceryLists.php?user_table_id=$user_table_id";
-header("Location: $new_page");
-die();
+// $stmt = $db->prepare('INSERT INTO grocery_list(user_table_id, list_content) VALUES
+// (:user_table_id, :list_content);');
+// $stmt->bindValue(':user_table_id', $user_table_id, PDO::PARAM_INT);
+// $stmt->bindValue(':list_content', $list_content, PDO::PARAM_STR);
+// $stmt->execute();
+
+// $new_page = "userGroceryLists.php?user_id=$user_id";
+// header("Location: $new_page");
+// die();
 
 ?>
