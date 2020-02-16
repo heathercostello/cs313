@@ -30,4 +30,6 @@ $new_page = "userGroceryLists.php?user_id=$id";
 header("Location: $new_page");
 // die();
 
+echo "FIVE";
+
 ?>
