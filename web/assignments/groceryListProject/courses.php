@@ -9,7 +9,7 @@ $db = get_db();
 // $stmt->execute();
 // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$query = 'SELECT id, code, name FROM course';
+$query = 'SELECT id, code, name FROM grocery_user';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -18,21 +18,21 @@ $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Courses</title>
+	<title>Grocery List Users</title>
 </head>
 <body>
-	<h1>Courses</h1>
+	<h1>Grocery List Users</h1>
 
 	<ul>
 <?php
 
-foreach ($courses as $course)
+foreach ($courses as $grocery_user)
 {
-	$id = $course['id'];
-	$code = $course['code'];
-	$name = $course['name'];
+	$id = $grocery_user['id'];
+	$code = $grocery_user['code'];
+	$name = $grocery_user['name'];
 
-	echo "<li><p><a href='course_notes.php?course_id=$id'>$code - $name</a></p></li>";
+	echo "<li><p><a href='course_notes.php?grocery_user_id=$id'>$code - $name</a></p></li>";
 }
 ?>		
 	</ul>

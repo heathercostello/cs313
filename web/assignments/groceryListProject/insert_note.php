@@ -1,17 +1,17 @@
 <?php
 
-$course_id = htmlspecialchars($_POST['course_id']);
+$course_id = htmlspecialchars($_POST['grocery_user_id']);
 $content = htmlspecialchars($_POST['note_content']);
 
 require('dbConnect.php');
 $db = get_db();
 
-$stmt = $db->prepare('INSERT INTO note(course_id, content) VALUES (:course_id, :content);');
-$stmt->bindValue(':course_id', $course_id, PDO::PARAM_INT);
+$stmt = $db->prepare('INSERT INTO note(grocery_user_id, content) VALUES (:grocery_user_id, :content);');
+$stmt->bindValue(':grocery_user_id', $grocery_user_id, PDO::PARAM_INT);
 $stmt->bindValue(':content', $content, PDO::PARAM_STR);
 $stmt->execute();
 
-$new_page = "course_notes.php?course_id=$course_id";
+$new_page = "course_notes.php?grocery_user_id=$grocery_user_id";
 
 header("Location: $new_page");
 die();
