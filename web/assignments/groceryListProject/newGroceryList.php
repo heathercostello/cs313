@@ -9,11 +9,10 @@ $stmt = $db->prepare('INSERT INTO grocery_list(user_table_id, list_content) VALU
 (:user_table_id, :list_content)');
 $stmt->bindValue(':user_table_id', $user_table_id, PDO::PARAM_INT);
 $stmt->bindValue(':list_content', $list_content, PDO::PARAM_STR);
-echo "FOUR";
 $stmt->execute();
 
 
-echo "FOUR";
+// echo "FOUR";
 
 
 $new_page = "userGroceryLists.php?user_id=$user_id";
