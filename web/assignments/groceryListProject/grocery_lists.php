@@ -41,5 +41,7 @@ foreach ($note_rows as $note_row)
 	<input type="submit" value="Add List">
 </form>
 
+<p><a href="users.php">Go back to list of users.</a></p>
+
 </body>
 </html>
