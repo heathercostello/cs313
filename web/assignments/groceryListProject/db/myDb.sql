@@ -44,7 +44,7 @@
 -- WHERE u.id = '1';
     
 DROP TABLE IF EXISTS grocery_user;
-DROP TABLE IF EXISTS note;
+DROP TABLE IF EXISTS list;
 
 CREATE TABLE grocery_user (
 	id SERIAL PRIMARY KEY,
@@ -52,7 +52,7 @@ CREATE TABLE grocery_user (
 	firstName VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE note
+CREATE TABLE list
 (
 	id SERIAL PRIMARY KEY,
 	grocery_user_id INT NOT NULL REFERENCES grocery_user(id),
@@ -64,10 +64,10 @@ INSERT INTO grocery_user(username, firstName) VALUES
 ('mojojoseph', 'Joseph'),
 ('robynBird', 'Robyn');
 
-INSERT INTO note(grocery_user_id, content) VALUES (1, 'milk, eggs, onion');
-INSERT INTO note(grocery_user_id, content) VALUES (2, 'nuts, bananas, bread');
-INSERT INTO note(grocery_user_id, content) VALUES (3, 'herbal tea, mugs, green onions');
+INSERT INTO list(grocery_user_id, content) VALUES (1, 'milk, eggs, onion');
+INSERT INTO list(grocery_user_id, content) VALUES (2, 'nuts, bananas, bread');
+INSERT INTO nollististte(grocery_user_id, content) VALUES (3, 'herbal tea, mugs, green onions');
 
-SELECT g.firstName, n.content FROM note n
+SELECT g.firstName, n.content FROM list n
 JOIN grocery_user g ON n.grocery_user_id = g.id
 WHERE g.username = 'heatherfeather';

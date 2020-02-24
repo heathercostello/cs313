@@ -1,12 +1,12 @@
 <?php
 
 $grocery_user_id = htmlspecialchars($_POST['grocery_user_id']);
-$content = htmlspecialchars($_POST['note_content']);
+$content = htmlspecialchars($_POST['list_content']);
 
 require('dbConnect.php');
 $db = get_db();
 
-$stmt = $db->prepare('INSERT INTO note(grocery_user_id, content) VALUES (:grocery_user_id, :content);');
+$stmt = $db->prepare('INSERT INTO list(grocery_user_id, content) VALUES (:grocery_user_id, :content);');
 $stmt->bindValue(':grocery_user_id', $grocery_user_id, PDO::PARAM_INT);
 $stmt->bindValue(':content', $content, PDO::PARAM_STR);
 $stmt->execute();
