@@ -36,7 +36,7 @@ foreach ($note_rows as $note_row)
 ?>
 
 <form method="post" action="insert_note.php">
-	<input type="hidden" name="grocery_user_id" value="<?php echo $grocery_user_id; ?>">
+	<input type="hidden" name="course_id" value="<?php echo $course_id; ?>">
 	<textarea name="note_content"></textarea>
 	<input type="submit" value="Create Note">
 </form>
