@@ -1,6 +1,6 @@
 <?php
 
-$course_id = htmlspecialchars($_POST['grocery_user_id']);
+$grocery_user_id = htmlspecialchars($_POST['grocery_user_id']);
 $content = htmlspecialchars($_POST['note_content']);
 
 require('dbConnect.php');

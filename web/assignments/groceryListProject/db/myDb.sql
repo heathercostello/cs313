@@ -66,6 +66,6 @@ INSERT INTO note(grocery_user_id, content) VALUES (1, 'Today we are learning abo
 INSERT INTO note(grocery_user_id, content) VALUES (1, 'Inner joins are interesting');
 INSERT INTO note(grocery_user_id, content) VALUES (2, 'I like neural networks.');
 
-SELECT c.name, n.content FROM note n
-JOIN grocery_user c ON n.grocery_user_id = c.id
-WHERE c.code = 'CS 313';
+SELECT g.name, n.content FROM note n
+JOIN grocery_user g ON n.grocery_user_id = g.id
+WHERE g.code = 'CS 313';
