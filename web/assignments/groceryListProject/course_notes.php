@@ -1,17 +1,17 @@
 <?php
 
-if (!isset($_GET['grocery_user_id']))
+if (!isset($_GET['course_id']))
 {
 	die("Error, course id not specified...");
 }
 
-$course_id = htmlspecialchars($_GET['grocery_user_id']);
+$course_id = htmlspecialchars($_GET['course_id']);
 
 require('dbConnect.php');
 $db = get_db();
 
-$stmt = $db->prepare('SELECT c.code, c.name, n.content FROM note n JOIN grocery_user g ON n.grocery_user_id = g.id WHERE g.id=:id');
-$stmt->bindValue(':id', $grocery_user_id, PDO::PARAM_INT);
+$stmt = $db->prepare('SELECT c.code, c.name, n.content FROM note n JOIN course c ON n.course_id = c.id WHERE c.id=:id');
+$stmt->bindValue(':id', $course_id, PDO::PARAM_INT);
 $stmt->execute();
 $note_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
