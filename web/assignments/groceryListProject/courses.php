@@ -32,7 +32,7 @@ foreach ($courses as $grocery_user)
 	$code = $grocery_user['code'];
 	$name = $grocery_user['name'];
 
-	echo "<li><p><a href='course_notes.php?grocery_user_id=$id'>$code - $name</a></p></li>";
+	echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$code - $name</a></p></li>";
 }
 ?>		
 	</ul>
