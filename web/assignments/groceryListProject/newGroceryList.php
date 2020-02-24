@@ -12,10 +12,10 @@ $stmt->bindValue(':list_content', $list_content, PDO::PARAM_STR);
 $stmt->execute();
 
 
-// echo "FOUR";
+echo "Your new list will now be shown under your username page.";
 
 
-$new_page = "userGroceryLists.php?id=$user_id";
+$new_page = "userGroceryLists.php?user_id=$user_id";
 header("Location: $new_page");
 die();
 
