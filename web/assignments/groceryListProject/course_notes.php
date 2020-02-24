@@ -1,11 +1,11 @@
 <?php
 
-if (!isset($_GET['grocery_user_id']))
+if (!isset($_GET['course_id']))
 {
 	die("Error, course id not specified...");
 }
 
-$grocery_user_id = htmlspecialchars($_GET['grocery_user_id']);
+$course_id = htmlspecialchars($_GET['course_id']);
 
 require('dbConnect.php');
 $db = get_db();
