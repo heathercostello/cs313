@@ -15,7 +15,7 @@ $stmt->execute();
 // echo "FOUR";
 
 
-$new_page = "userGroceryLists.php?user_id=$user_id";
+$new_page = "userGroceryLists.php?id=$user_id";
 header("Location: $new_page");
 die();
 
