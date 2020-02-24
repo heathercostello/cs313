@@ -46,7 +46,7 @@
 
 CREATE TABLE grocery_user (
 	id SERIAL PRIMARY KEY,
-	code VARCHAR(25) NOT NULL UNIQUE,
+	username VARCHAR(25) NOT NULL UNIQUE,
 	name VARCHAR(100) NOT NULL
 );
 
@@ -57,8 +57,8 @@ CREATE TABLE note
 	content text NOT NULL
 );
 
-INSERT INTO grocery_user(code, name) VALUES ('CS 313', 'Web Engineering II');
-INSERT INTO grocery_user(code, name) VALUES
+INSERT INTO grocery_user(username, name) VALUES ('CS 313', 'Web Engineering II');
+INSERT INTO grocery_user(username, name) VALUES
 ('CS 450', 'Machine Learning and Data Mining'),
 ('CS 246', 'Software Design and Development');
 
@@ -68,4 +68,4 @@ INSERT INTO note(grocery_user_id, content) VALUES (2, 'I like neural networks.')
 
 SELECT g.name, n.content FROM note n
 JOIN grocery_user g ON n.grocery_user_id = g.id
-WHERE g.code = 'CS 313';
+WHERE g.username = 'CS 313';
