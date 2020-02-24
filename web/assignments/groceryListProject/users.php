@@ -9,7 +9,7 @@ $db = get_db();
 // $stmt->execute();
 // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$query = 'SELECT id, username, name FROM grocery_user';
+$query = 'SELECT id, username, firstName FROM grocery_user';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -30,9 +30,9 @@ foreach ($courses as $grocery_user)
 {
 	$id = $grocery_user['id'];
 	$username = $grocery_user['username'];
-	$name = $grocery_user['name'];
+	$firstName = $grocery_user['firstName'];
 
-	echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$username - $name</a></p></li>";
+	echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$username - $firstName</a></p></li>";
 }
 ?>		
 	</ul>

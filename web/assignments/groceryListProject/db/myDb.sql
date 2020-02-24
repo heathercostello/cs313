@@ -43,11 +43,13 @@
 -- JOIN user_table u ON g.user_table_id = u.id
 -- WHERE u.id = '1';
     
+DROP TABLE IF EXISTS grocery_user;
+DROP TABLE IF EXISTS note;
 
 CREATE TABLE grocery_user (
 	id SERIAL PRIMARY KEY,
 	username VARCHAR(25) NOT NULL UNIQUE,
-	name VARCHAR(100) NOT NULL
+	firstName VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE note
@@ -57,15 +59,15 @@ CREATE TABLE note
 	content text NOT NULL
 );
 
-INSERT INTO grocery_user(username, name) VALUES ('CS 313', 'Web Engineering II');
-INSERT INTO grocery_user(username, name) VALUES
-('CS 450', 'Machine Learning and Data Mining'),
-('CS 246', 'Software Design and Development');
+INSERT INTO grocery_user(username, firstName) VALUES ('heatherfeather', 'Heather');
+INSERT INTO grocery_user(username, firstName) VALUES
+('mojojoseph', 'Joseph'),
+('robynBird', 'Robyn');
 
-INSERT INTO note(grocery_user_id, content) VALUES (1, 'Today we are learning about dbs');
-INSERT INTO note(grocery_user_id, content) VALUES (1, 'Inner joins are interesting');
-INSERT INTO note(grocery_user_id, content) VALUES (2, 'I like neural networks.');
+INSERT INTO note(grocery_user_id, content) VALUES (1, 'milk, eggs, onion');
+INSERT INTO note(grocery_user_id, content) VALUES (2, 'nuts, bananas, bread');
+INSERT INTO note(grocery_user_id, content) VALUES (3, 'herbal tea, mugs, green onions');
 
-SELECT g.name, n.content FROM note n
+SELECT g.firstName, n.content FROM note n
 JOIN grocery_user g ON n.grocery_user_id = g.id
-WHERE g.username = 'CS 313';
+WHERE g.username = 'heatherfeather';
