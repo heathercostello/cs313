@@ -15,7 +15,7 @@ $stmt->bindValue(':id', $grocery_user_id, PDO::PARAM_INT);
 $stmt->execute();
 $note_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$grocery_user = $note_rows[0]['code'];
+$grocery_user_code = $note_rows[0]['code'];
 
 
 ?>
