@@ -53,7 +53,7 @@ foreach ($users as $grocery_user)
 	
 	<?php while ($row = mysqli_fetch_array($results)) { ?>
 		<tr>
-			<td><?php echo $row['username']; ?></td>
+			<td><?php echo $username; ?></td>
 			<td><?php echo $row['firstName']; ?></td>
 			<td><?php echo $row['lastName']; ?></td>
 			<td>
