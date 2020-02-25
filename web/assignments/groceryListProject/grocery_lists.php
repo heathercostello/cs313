@@ -42,12 +42,12 @@ foreach ($list_rows as $list_row)
 	<input type="submit" value="Add List">
 </form>
 
-<p><a href="users.php">Go back to list of users</a></p>
+<p class="btnTwo"><a href="users.php">Go back to list of users</a></p>
 
 <hr>
 
-<p><a href="editUsers.php">Edit User <?php echo $grocery_user_username;?></a></p>
-<p><a href="deleteUsers.php">Delete User <?php echo $grocery_user_username;?></a></p>
+<p class="edit_btn"><a href="editUsers.php">Edit User <?php echo $grocery_user_username;?></a></p>
+<p class="del_btn"><a href="deleteUsers.php">Delete User <?php echo $grocery_user_username;?></a></p>
 
 </body>
 </html>

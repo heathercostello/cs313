@@ -61,6 +61,15 @@ form {
     border-radius: 5px;
 }
 
+.btnTwo {
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background: rgb(19, 40, 41);
+    border: none;
+    border-radius: 5px;
+}
+
 .edit_btn {
     text-decoration: none;
     padding: 2px 5px;

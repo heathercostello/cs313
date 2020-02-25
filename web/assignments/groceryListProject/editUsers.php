@@ -20,7 +20,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Edit Information for User</h1>
+    <h1>Edit User Information</h1>
     
     <form method="post" action="edit_user.php">
         <input type="hidden" name="username" value="<?php echo $_GET["username"]; ?>">
@@ -37,7 +37,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </form>
 
         <hr>
-        <p><a href="users.php">Go back to list of users</a></p>
+        <p class="btnTwo"><a href="users.php">Go back to list of users</a></p>
 
 </body>
 </html>
