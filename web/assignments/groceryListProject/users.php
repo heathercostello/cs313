@@ -84,7 +84,7 @@ foreach ($users as $grocery_user)
 	$firstName = $grocery_user['firstName'];
 	$lastName = $grocery_user['lastName'];
 
-	echo "<td><a href='grocery_lists.php?grocery_user_id=$id'>$firstName</a></td>";
+	echo "<td>$firstName</td>";
 }
 ?>		
 </tr>
