@@ -72,7 +72,6 @@ foreach ($users as $grocery_user)
 
 	//echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></p></li>";
 	echo "<td><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></td>";
-	echo "<td><a href='grocery_lists.php?grocery_user_id=$id'>$firstName</a></td>";
 }
 ?>		
 </tr>
@@ -89,6 +88,7 @@ foreach ($users as $grocery_user)
 }
 ?>		
 </tr>
+</table>
 <hr>
 <p><a href="createNewUser.php">Create A New User</a></p>
 
