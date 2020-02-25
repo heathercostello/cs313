@@ -32,7 +32,7 @@ foreach ($users as $grocery_user)
 	$username = $grocery_user['username'];
 	$firstName = $grocery_user['firstName'];
 
-	echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$username - $firstName</a></p></li>";
+	echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></p></li>";
 }
 ?>		
 	</ul>
@@ -42,13 +42,8 @@ foreach ($users as $grocery_user)
 	<textarea name="list_content"></textarea>
 	<input type="submit" value="Add User">
 	</form> -->
-
-		<form method="post" action="insert_user.php">
-        <input type="hidden" name="username" value="<?php echo $username; ?>">
-        User Name: <input type="text" name="username" value="<?php echo $username;?>"><br>
-        First Name: <input type="text" name="firstName" value="<?php echo $firstName;?>"><br>
-        <input type="submit" value="Create User">
-        </form>
+<hr>
+<p><a href="createNewUser.php">Create A New User</a></p>
 
 </body>
 </html>
