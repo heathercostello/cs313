@@ -1,11 +1,22 @@
 <?php
+
+if (!isset($_GET['grocery_user_id']))
+{
+	die("Error, user id not specified...");
+}
+
+$grocery_user_id = htmlspecialchars($_GET['grocery_user_id']);
+
 require('dbConnect.php');
 $db = get_db();
 
-$query = 'SELECT id, username, firstName, lastName FROM grocery_user';
-$stmt = $db->prepare($query);
+$stmt = $db->prepare('SELECT g.username, g.firstName, g.lastName, l.content FROM list l JOIN grocery_user g ON l.grocery_user_id = g.id WHERE g.id=:id');
+$stmt->bindValue(':id', $grocery_user_id, PDO::PARAM_INT);
 $stmt->execute();
-$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$list_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$grocery_user_username = $list_rows[0]['username'];
+
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +29,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Edit Information for<?php echo $grocery_user_username;?></h1>
     
     <form method="post" action="edit_user.php">
-        <input type="hidden" name="username" value="<?php echo $username;?>">
+        <input type="hidden" name="username" value="<?php echo $_GET["username"]; ?>">
         User Name: <input type="text" name="username" value="<?php echo $username;?>"><br>
         First Name: <input type="text" name="firstName" value="<?php echo $firstName;?>"><br>
         Last Name: <input type="text" name="lastName" value="<?php echo $lastName;?>"><br>

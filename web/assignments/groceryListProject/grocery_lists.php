@@ -2,7 +2,7 @@
 
 if (!isset($_GET['grocery_user_id']))
 {
-	die("Error, course id not specified...");
+	die("Error, user id not specified...");
 }
 
 $grocery_user_id = htmlspecialchars($_GET['grocery_user_id']);
