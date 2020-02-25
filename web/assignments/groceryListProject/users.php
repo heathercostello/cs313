@@ -61,7 +61,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			<th colspan="2">Action</th>
 		</tr>
 	</thead>
-	<ul>
+	<tr>
 <?php
 
 foreach ($users as $grocery_user)
@@ -71,10 +71,11 @@ foreach ($users as $grocery_user)
 	$firstName = $grocery_user['firstName'];
 	$lastName = $grocery_user['lastName'];
 
-	echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></p></li>";
+	//echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></p></li>";
+	echo "<td><p><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></p></td>";
 }
 ?>		
-	</ul>
+	</tr>
 
 	<?php $results = mysqli_query($db, "SELECT * FROM grocery_user"); ?>
 
