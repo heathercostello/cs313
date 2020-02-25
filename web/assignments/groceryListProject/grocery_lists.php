@@ -47,6 +47,7 @@ foreach ($list_rows as $list_row)
 <hr>
 
 <p><a href="editUsers.php">Edit User <?php echo $grocery_user_username;?></a></p>
+<p><a href="deleteUsers.php">Delete User <?php echo $grocery_user_username;?></a></p>
 
 </body>
 </html>
