@@ -26,7 +26,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	<h1>Grocery List Users</h1>
 
-	<ul>
+
 <?php
 foreach ($users as $grocery_user)
 {
@@ -35,10 +35,10 @@ foreach ($users as $grocery_user)
 	$firstName = $grocery_user['firstName'];
 	$lastName = $grocery_user['lastName'];
 
-	echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></p></li>";
+	echo "<p><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></p>";
 }
 ?>		
-</ul>
+
 
 <hr>
 <p class="btnTwo"><a href="createNewUser.php">Create A New User</a></p>
