@@ -39,7 +39,7 @@ foreach ($list_rows as $list_row)
 <form method="post" action="insert_list.php">
 	<input type="hidden" name="grocery_user_id" value="<?php echo $grocery_user_id; ?>">
 	<textarea name="list_content"></textarea>
-	<input type="submit" value="Add List">
+	<input class="btnTwo" type="submit" value="Add List">
 </form>
 
 <p class="btnTwo"><a href="users.php">Go back to list of users</a></p>
