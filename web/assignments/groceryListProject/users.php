@@ -63,7 +63,6 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	</thead>
 	<tr>
 <?php
-
 foreach ($users as $grocery_user)
 {
 	$id = $grocery_user['id'];
@@ -72,10 +71,11 @@ foreach ($users as $grocery_user)
 	$lastName = $grocery_user['lastName'];
 
 	//echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></p></li>";
-	echo "<td><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></td>";
+	echo "<a href='grocery_lists.php?grocery_user_id=$id'>$username</a>";
+	echo "<a href='grocery_lists.php?grocery_user_id=$id'>$firstName</a>";
 }
 ?>		
-	</tr>
+</tr>
 
 <hr>
 <p><a href="createNewUser.php">Create A New User</a></p>
