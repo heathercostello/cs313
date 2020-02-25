@@ -72,38 +72,10 @@ foreach ($users as $grocery_user)
 	$lastName = $grocery_user['lastName'];
 
 	//echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></p></li>";
-	echo "<tr><p><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></p></tr>";
+	echo "<td><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></td>";
 }
 ?>		
 	</tr>
-
-	<?php $results = mysqli_query($db, "SELECT * FROM grocery_user"); ?>
-
-<table>
-	<thead>
-		<tr>
-			<th>Username</th>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th colspan="2">Action</th>
-		</tr>
-	</thead>
-	
-	<?php while ($row = mysqli_fetch_array($results)) { ?>
-		<tr>
-			<td><?php echo $row['username']; ?></td>
-			<td><?php echo $row['firstName']; ?></td>
-			<td><?php echo $row['lastName']; ?></td>
-			<td>
-				<a href="index.php?edit=<?php echo $row['id']; ?>" class="edit_btn" >Edit</a>
-			</td>
-			<td>
-				<a href="server.php?del=<?php echo $row['id']; ?>" class="del_btn">Delete</a>
-			</td>
-		</tr>
-	<?php } ?>
-</table>
-
 
 <hr>
 <p><a href="createNewUser.php">Create A New User</a></p>
