@@ -2,7 +2,7 @@
 
 $username = htmlspecialchars($_POST['username']);
 $firstName = htmlspecialchars($_POST['firstName']);
-$lasttName = htmlspecialchars($_POST['lastName']);
+$lastName = htmlspecialchars($_POST['lastName']);
 
 require('dbConnect.php');
 $db = get_db();
