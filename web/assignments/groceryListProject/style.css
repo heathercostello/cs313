@@ -61,7 +61,9 @@ form {
     border-radius: 5px;
 }
 
-.btnTwo {
+.btnTwo,
+.btnTwo:hover,
+.btnTwo:visited {
     padding: 10px;
     font-size: 15px;
     color: white;
@@ -70,7 +72,9 @@ form {
     border-radius: 5px;
 }
 
-.edit_btn {
+.edit_btn,
+.edit_btn:hover,
+.edit_btn:visited {
     text-decoration: none;
     padding: 2px 5px;
     background: #2E8B57;
@@ -78,21 +82,12 @@ form {
     border-radius: 3px;
 }
 
-.del_btn {
+.del_btn,
+.del_btn:hover,
+.del_btn:visited {
     text-decoration: none;
     padding: 2px 5px;
     color: white;
     border-radius: 3px;
     background: #800000;
-}
-
-.msg {
-    margin: 30px auto;
-    padding: 10px;
-    border-radius: 5px;
-    color: #3c763d;
-    background: #dff0d8;
-    border: 1px solid #3c763d;
-    width: 50%;
-    text-align: center;
 }
