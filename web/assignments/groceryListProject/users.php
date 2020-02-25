@@ -1,24 +1,4 @@
-<?php  include('server.php'); ?>
-<?php 
-	session_start();
-	$db = mysqli_connect('localhost', 'root', '', 'crud');
 
-	// initialize variables
-	$username = "";
-	$firstName = "";
-	$lastName = "";
-	$id = 0;
-	$update = false;
-
-	if (isset($_POST['save'])) {
-		$username = $_POST['username'];
-		$firstName = $_POST['firstName'];
-		$lastName = $_POST['lastName'];
-
-		mysqli_query($db, "INSERT INTO grocery_user (username, firstName, lastName) VALUES ('$username', '$firstName', '$lastName')"); 
-		$_SESSION['message'] = "User Created"; 
-		header('location: users.php');
-	}?>
 <?php
 require('dbConnect.php');
 $db = get_db();
@@ -43,21 +23,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<?php if (isset($_SESSION['message'])): ?>
-	<div class="msg">
-		<?php 
-			echo $_SESSION['message']; 
-			unset($_SESSION['message']);
-		?>
-	</div>
-<?php endif ?>
+
 	<h1>Grocery List Users</h1>
-	<table>
-	<thead>
-		<tr>
-			<th>Username</th>
-		</tr>
-	</thead>
+
 	<ul>
 <?php
 foreach ($users as $grocery_user)
