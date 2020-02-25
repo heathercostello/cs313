@@ -12,7 +12,7 @@ $db = get_db();
 $query = 'SELECT id, username, firstName FROM grocery_user';
 $stmt = $db->prepare($query);
 $stmt->execute();
-$courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	<ul>
 <?php
 
-foreach ($courses as $grocery_user)
+foreach ($users as $grocery_user)
 {
 	$id = $grocery_user['id'];
 	$username = $grocery_user['username'];

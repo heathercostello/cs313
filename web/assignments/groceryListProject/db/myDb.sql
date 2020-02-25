@@ -66,8 +66,8 @@ INSERT INTO grocery_user(username, firstName) VALUES
 
 INSERT INTO list(grocery_user_id, content) VALUES (1, 'milk, eggs, onion');
 INSERT INTO list(grocery_user_id, content) VALUES (2, 'nuts, bananas, bread');
-INSERT INTO nollististte(grocery_user_id, content) VALUES (3, 'herbal tea, mugs, green onions');
+INSERT INTO list(grocery_user_id, content) VALUES (3, 'herbal tea, mugs, green onions');
 
-SELECT g.firstName, n.content FROM list n
-JOIN grocery_user g ON n.grocery_user_id = g.id
+SELECT g.firstName, l.content FROM list l
+JOIN grocery_user g ON l.grocery_user_id = g.id
 WHERE g.username = 'heatherfeather';
