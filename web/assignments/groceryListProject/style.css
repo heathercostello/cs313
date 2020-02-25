@@ -82,7 +82,7 @@ form {
 .edit_btn:visited {
     text-decoration: none;
     padding: 2px 5px;
-    background: rgb(137, 226, 175);
+    background: rgb(103, 173, 133);
     color: white;
     border-radius: 3px;
     width: fit-content;
@@ -95,11 +95,11 @@ form {
     padding: 2px 5px;
     color: white;
     border-radius: 3px;
-    background: #ee5555;
+    background: #b94242;
     width: fit-content;
 }
 
 .lists {
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
 }
