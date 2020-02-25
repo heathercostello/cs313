@@ -76,7 +76,19 @@ foreach ($users as $grocery_user)
 }
 ?>		
 </tr>
+<tr>
+<?php
+foreach ($users as $grocery_user)
+{
+	$id = $grocery_user['id'];
+	$username = $grocery_user['username'];
+	$firstName = $grocery_user['firstName'];
+	$lastName = $grocery_user['lastName'];
 
+	echo "<td><a href='grocery_lists.php?grocery_user_id=$id'>$firstName</a></td>";
+}
+?>		
+</tr>
 <hr>
 <p><a href="createNewUser.php">Create A New User</a></p>
 
