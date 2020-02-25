@@ -1,3 +1,4 @@
+<?php  include('server.php'); ?>
 <?php 
 	session_start();
 	$db = mysqli_connect('localhost', 'root', '', 'crud');
@@ -42,6 +43,14 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<?php if (isset($_SESSION['message'])): ?>
+	<div class="msg">
+		<?php 
+			echo $_SESSION['message']; 
+			unset($_SESSION['message']);
+		?>
+	</div>
+<?php endif ?>
 	<h1>Grocery List Users</h1>
 
 	<ul>
@@ -59,7 +68,7 @@ foreach ($users as $grocery_user)
 ?>		
 	</ul>
 
-	<?php $query = 'SELECT id, username, firstName, lastName FROM grocery_user'; ?>
+	<?php $results = mysqli_query($db, "SELECT * FROM grocery_user"); ?>
 
 <table>
 	<thead>
@@ -73,7 +82,7 @@ foreach ($users as $grocery_user)
 	
 	<?php while ($row = mysqli_fetch_array($results)) { ?>
 		<tr>
-			<td><?php echo $grocery_user['username']; ?></td>
+			<td><?php echo $row['username']; ?></td>
 			<td><?php echo $row['firstName']; ?></td>
 			<td><?php echo $row['lastName']; ?></td>
 			<td>
