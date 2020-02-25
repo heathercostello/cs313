@@ -20,7 +20,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Edit Information for<?php echo $grocery_user_username;?></h1>
+    <h1>Edit Information for User</h1>
     
     <form method="post" action="edit_user.php">
         <input type="hidden" name="username" value="<?php echo $_GET["username"]; ?>">
