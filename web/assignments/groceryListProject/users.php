@@ -19,6 +19,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
 	<title>Grocery List Users</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h1>Grocery List Users</h1>

@@ -11,7 +11,8 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create Grocery List Users</title>
+    <title>Create Grocery List Users</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h1>Create A New Grocery List User</h1>

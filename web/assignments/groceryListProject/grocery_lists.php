@@ -23,6 +23,7 @@ $grocery_user_username = $list_rows[0]['username'];
 <html>
 <head>
 	<title>Grocery Lists</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <h1>Grocery Lists for <?php echo $grocery_user_username;?></h1>
