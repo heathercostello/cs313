@@ -1,3 +1,23 @@
+<?php 
+	session_start();
+	$db = mysqli_connect('localhost', 'root', '', 'crud');
+
+	// initialize variables
+	$username = "";
+	$firstName = "";
+	$lastName = "";
+	$id = 0;
+	$update = false;
+
+	if (isset($_POST['save'])) {
+		$username = $_POST['username'];
+		$firstName = $_POST['firstName'];
+		$lastName = $_POST['lastName'];
+
+		mysqli_query($db, "INSERT INTO grocery_user (username, firstName, lastName) VALUES ('$username', '$firstName', '$lastName')"); 
+		$_SESSION['message'] = "User Created"; 
+		header('location: users.php');
+	}?>
 <?php
 require('dbConnect.php');
 $db = get_db();
@@ -39,7 +59,7 @@ foreach ($users as $grocery_user)
 ?>		
 	</ul>
 
-	<?php $results = mysqli_query($db, "SELECT * FROM grocery_user"); ?>
+	<?php $query = 'SELECT id, username, firstName, lastName FROM grocery_user'; ?>
 
 <table>
 	<thead>

@@ -16,13 +16,13 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 	<h1>Create A New Grocery List User</h1>
-    <form method="post" action="insert_user.php">
+    <!-- <form method="post" action="insert_user.php">
         <input type="hidden" name="username" value="<?php echo $username; ?>">
         User Name: <input type="text" name="username" value="<?php echo $username;?>"><br>
         First Name: <input type="text" name="firstName" value="<?php echo $firstName;?>"><br>
         Last Name: <input type="text" name="lastName" value="<?php echo $lastName;?>"><br>
         <input type="submit" value="Create User">
-        </form>
+        </form> -->
 
         <form method="post" action="insert_user.php" >
 		<div class="input-group">
