@@ -36,7 +36,6 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <input class="btn" type="submit" value="Edit User">
         </form>
 
-        <hr>
         <p class="btnTwo"><a href="users.php">Go back to list of users</a></p>
 
 </body>

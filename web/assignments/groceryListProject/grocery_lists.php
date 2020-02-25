@@ -44,7 +44,6 @@ foreach ($list_rows as $list_row)
 
 <p class="btnTwo"><a href="users.php">Go back to list of users</a></p>
 
-<hr>
 
 <p class="edit_btn"><a href="editUsers.php">Edit User <?php echo $grocery_user_username;?></a></p>
 <p class="del_btn"><a href="deleteUsers.php">Delete User <?php echo $grocery_user_username;?></a></p>

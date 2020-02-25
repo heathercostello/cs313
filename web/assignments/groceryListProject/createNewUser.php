@@ -42,7 +42,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		</div>
 	</form>
 
-        <hr>
+
         <p class="btnTwo"><a href="users.php">Go back to list of users</a></p>
 
 </body>

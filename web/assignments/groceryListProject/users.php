@@ -40,7 +40,6 @@ foreach ($users as $grocery_user)
 ?>		
 </ul>
 
-<hr>
 <p class="btnTwo"><a href="createNewUser.php">Create A New User</a></p>
 
 </body>
