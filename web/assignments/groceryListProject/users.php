@@ -9,7 +9,7 @@ $db = get_db();
 // $stmt->execute();
 // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$query = 'SELECT id, username, firstName FROM grocery_user';
+$query = 'SELECT id, username, firstName, lastName FROM grocery_user';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -31,17 +31,12 @@ foreach ($users as $grocery_user)
 	$id = $grocery_user['id'];
 	$username = $grocery_user['username'];
 	$firstName = $grocery_user['firstName'];
+	$lastName = $grocery_user['lastName'];
 
 	echo "<li><p><a href='grocery_lists.php?grocery_user_id=$id'>$username</a></p></li>";
 }
 ?>		
 	</ul>
-
-	<!-- <form method="post" action="insert_list.php">
-	<input type="hidden" name="grocery_user_id" value="<?php echo $grocery_user_id; ?>">
-	<textarea name="list_content"></textarea>
-	<input type="submit" value="Add User">
-	</form> -->
 <hr>
 <p><a href="createNewUser.php">Create A New User</a></p>
 
