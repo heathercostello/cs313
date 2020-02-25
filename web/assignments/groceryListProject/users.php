@@ -37,5 +37,11 @@ foreach ($users as $grocery_user)
 ?>		
 	</ul>
 
+	<form method="post" action="insert_list.php">
+	<input type="hidden" name="grocery_user_id" value="<?php echo $grocery_user_id; ?>">
+	<textarea name="list_content"></textarea>
+	<input type="submit" value="Add List">
+</form>
+
 </body>
 </html>
