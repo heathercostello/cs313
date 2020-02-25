@@ -1,6 +1,7 @@
 body {
     font-size: 19px;
     text-align: center;
+    border-style: double;
 }
 
 h1 {
@@ -110,6 +111,6 @@ form {
 }
 
 a:visited {
-    color: rgb(173, 176, 194);
+    color: rgb(22, 22, 43);
     text-decoration: none;
 }
