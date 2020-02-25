@@ -23,8 +23,10 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1>Delete User</h1>
     
     <form method="post" action="delete_user.php">
+        <div class="deleteForm">
     <label>Deleting the User will be perminant</label><br>
         <input class="btnDelete" type="submit" value="Delete User">
+        </div>
         </form>
 
         <p class="btnTwo"><a href="users.php">Go back to list of users</a></p>

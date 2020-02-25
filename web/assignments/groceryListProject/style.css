@@ -124,3 +124,7 @@ a:visited {
     width: auto;
     font-size: 20px;
 }
+
+.deleteForm {
+    align-content: center;
+}
