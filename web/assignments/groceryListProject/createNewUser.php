@@ -24,6 +24,24 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <input type="submit" value="Create User">
         </form>
 
+        <form method="post" action="insert_user.php" >
+		<div class="input-group">
+			<label>User Name:</label>
+			<input type="text" name="username" value="">
+		</div>
+		<div class="input-group">
+			<label> First Name:</label>
+			<input type="text" name="firstName" value="">
+        </div>
+        <div class="input-group">
+			<label> Last Name:</label>
+			<input type="text" name="lastName" value="">
+		</div>
+		<div class="input-group">
+			<button class="btn" type="submit" name="save" >Create User</button>
+		</div>
+	</form>
+
         <hr>
         <p><a href="users.php">Go back to list of users</a></p>
 
