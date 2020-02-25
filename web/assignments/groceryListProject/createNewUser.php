@@ -27,15 +27,15 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <form method="post" action="insert_user.php" >
 		<div class="input-group">
 			<label>User Name:</label>
-			<input type="text" name="username" value="">
+			<input type="text" name="username" value="<?php echo $username; ?>">
 		</div>
 		<div class="input-group">
 			<label> First Name:</label>
-			<input type="text" name="firstName" value="">
+			<input type="text" name="firstName" value="<?php echo $firstName;?>">
         </div>
         <div class="input-group">
 			<label> Last Name:</label>
-			<input type="text" name="lastName" value="">
+			<input type="text" name="lastName" value="<?php echo $lastName;?>">
 		</div>
 		<div class="input-group">
 			<button class="btn" type="submit" name="save" >Create User</button>

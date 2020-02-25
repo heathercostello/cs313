@@ -27,7 +27,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
         User Name: <input type="text" name="username" value="<?php echo $username;?>"><br>
         First Name: <input type="text" name="firstName" value="<?php echo $firstName;?>"><br>
         Last Name: <input type="text" name="lastName" value="<?php echo $lastName;?>"><br>
-        <input type="submit" value="Edit User">
+        <input class="btn" type="submit" value="Edit User">
         </form>
 
         <hr>
