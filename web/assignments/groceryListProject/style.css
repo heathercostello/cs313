@@ -114,3 +114,12 @@ a:visited {
     color: rgb(22, 22, 43);
     text-decoration: none;
 }
+
+.btnDelete {
+    text-decoration: none;
+    padding: 2px 5px;
+    color: white;
+    border-radius: 3px;
+    background: #b94242;
+    width: fit-content;
+}
