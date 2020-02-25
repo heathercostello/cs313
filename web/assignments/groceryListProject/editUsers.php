@@ -1,23 +1,17 @@
 <?php
-
-if (!isset($_GET['grocery_user_id']))
-{
-	die("Error, user id not specified...");
-}
-
-$grocery_user_id = htmlspecialchars($_GET['grocery_user_id']);
-
+// Start the session
+session_start();
+?>
+<?php
 require('dbConnect.php');
 $db = get_db();
 
-$stmt = $db->prepare('SELECT g.username, g.firstName, g.lastName, l.content FROM list l JOIN grocery_user g ON l.grocery_user_id = g.id WHERE g.id=:id');
-$stmt->bindValue(':id', $grocery_user_id, PDO::PARAM_INT);
+$query = 'SELECT id, username, first_name, last_name FROM user_table';
+$stmt = $db->prepare($query);
 $stmt->execute();
-$list_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$grocery_user_username = $list_rows[0]['username'];
-
-
+//SELECT id, username, first_name, last_name FROM user_table;
 ?>
 <!DOCTYPE html>
 <html>
