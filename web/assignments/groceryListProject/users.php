@@ -52,7 +52,15 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	</div>
 <?php endif ?>
 	<h1>Grocery List Users</h1>
-
+	<table>
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th colspan="2">Action</th>
+		</tr>
+	</thead>
 	<ul>
 <?php
 
