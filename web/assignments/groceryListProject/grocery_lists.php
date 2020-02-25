@@ -43,5 +43,9 @@ foreach ($list_rows as $list_row)
 
 <p><a href="users.php">Go back to list of users</a></p>
 
+<hr>
+
+<p><a href="editUsers.php">Edit User</a></p>
+
 </body>
 </html>
