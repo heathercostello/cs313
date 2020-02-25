@@ -25,6 +25,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
 	<h1>Grocery List Users</h1>
+	<h2>Click on a username to see their saved lists</h2>
 
 	<ul>
 <?php
