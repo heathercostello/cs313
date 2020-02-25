@@ -24,9 +24,15 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     <form method="post" action="edit_user.php">
         <input type="hidden" name="username" value="<?php echo $_GET["username"]; ?>">
+        <div class="input-group">
         User Name: <input type="text" name="username" value="<?php echo $username;?>"><br>
+        </div>
+        <div class="input-group">
         First Name: <input type="text" name="firstName" value="<?php echo $firstName;?>"><br>
+        </div>
+        <div class="input-group">
         Last Name: <input type="text" name="lastName" value="<?php echo $lastName;?>"><br>
+        </div>
         <input class="btn" type="submit" value="Edit User">
         </form>
 
