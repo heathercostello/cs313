@@ -27,7 +27,7 @@ $grocery_user_username = $list_rows[0]['username'];
 </head>
 <body>
 <h1>Grocery Lists for <?php echo $grocery_user_username;?></h1>
-
+<div class="lists">
 <?php
 foreach ($list_rows as $list_row)
 {
@@ -35,7 +35,7 @@ foreach ($list_rows as $list_row)
 	echo "<p>$content</p>";
 }
 ?>
-
+</div>
 <form method="post" action="insert_list.php">
 	<input type="hidden" name="grocery_user_id" value="<?php echo $grocery_user_id; ?>">
 	<textarea name="list_content"></textarea>
