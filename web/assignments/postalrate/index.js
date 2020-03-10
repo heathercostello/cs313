@@ -1,14 +1,14 @@
-const express = require('express');
-const path = require('path');
+import express, { static } from 'express';
+import { join } from 'path';
 const PORT = process.env.PORT || 5000;
 
 const app = express();
 
 
-app.use(express.static(path.join(__dirname, 'public')))
-    .set('views', path.join(__dirname, 'views'))
+app.use(static(join(__dirname, 'public')))
+    .set('views', join(__dirname, 'views'))
     .set('view engine', 'ejs')
-    .get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/usPostalForm.html')))
+    .get('/', (_req, res) => res.sendFile(join(__dirname + '/public/usPostalForm.html')))
     .get('/getRate', handlePostalRate);
 
 
@@ -21,24 +21,24 @@ function handlePostalRate(req, res) {
     console.log(type);
     var result;
     switch (String(type)) {
-        case "letter-stamped"://Letters (Stamped)
+        case "letter-stamped": //Letters (Stamped)
             if (weight > 3) {
                 result = 1.00;
             } else {
                 result = 0.55 + (Math.floor(weight - 1) * .15);
             }
             break;
-        case "letter-metered"://Letters (Metered)
+        case "letter-metered": //Letters (Metered)
             if (weight > 3) {
                 result = 0.95;
             } else {
                 result = 0.50 + (Math.floor(weight - 1) * .15);
             }
             break;
-        case "large-envelope"://Large Envelopes (Flats)
+        case "large-envelope": //Large Envelopes (Flats)
             result = 1 + (Math.floor(weight - 1) * .15);
             break;
-        case "first-class-retail-package"://First-Class Package Service—Retail
+        case "first-class-retail-package": //First-Class Package Service—Retail
             if (weight > 12) {
                 result = 5.71;
             } else if (weight >= 8) {
@@ -54,7 +54,7 @@ function handlePostalRate(req, res) {
             break;
     }
 
-    const params = {weight: weight, type: type, result: result.toFixed(2)};
+    const params = { weight: weight, type: type, result: result.toFixed(2) };
 
     res.render("pages/postalRate", params);
 }
