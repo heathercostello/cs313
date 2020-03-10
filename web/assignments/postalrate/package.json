@@ -1,38 +1,26 @@
 {
-  "name": "Postal_Rate_Calculator",
-  "version": "1.0.0",
-  "description": "",
+  "name": "Ponder09-Postal-Rate-Calculator",
+  "version": "0.3.0",
+  "description": "node.js and express web application that determines the postage required for a single piece of retail first-class mail.",
+  "engines": {
+    "node": "10.x"
+  },
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --mode production",
-    "builddev": "./node_modules/.bin/webpack --mode development",
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "Matthew Burr",
-  "license": "UNLICENSED",
-  "babel": {
-    "presets": [
-      "react"
-    ]
+    "test": "node test.js"
   },
   "dependencies": {
-    "ejs": "^2.5.7",
-    "express": "^4.16.2",
-    "npm": "^5.7.1"
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-react": "^6.24.1",
-    "history": "^4.7.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "styled-components": "^3.2.1",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.10"
-  }
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ]
 }

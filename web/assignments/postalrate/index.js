@@ -1,90 +1,60 @@
 const express = require('express');
-const app = express();
+const path = require('path');
 const PORT = process.env.PORT || 5000;
-const CALC_FUNC = {
-  stamped: calculateStamped,
-  metered: calculateMetered,
-  flats: calculateFlats,
-  parcels: calculateParcel,
-};
 
-app.use(express.static('public'));
-app.set('view engine', 'ejs');
-app.get('/getRate', (req, res) => {
-  let {weight, type} = req.query;
-  try {
-    res.render('result', {
-      weight: weight,
-      type: type,
-      rate: calculateRate(+weight, type).toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD',
-      }),
-    });
-  } catch (err) {
-    console.log({error: err, weight: weight, type: type});
-    res.render('error', {message: err.message});
-  }
-});
+const app = express();
 
-app.get('/api/rates/:type/', (req, res) => {
-  let {weight} = req.query;
-  let {type} = req.params;
-  try {
-    let rate = calculateRate(+weight, type).toLocaleString('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    });
-    res.json({type: type, weight: +weight, rate: rate});
-  } catch (err) {
-    console.log({error: err, weight: weight, type: type});
-    res.status(400).send(err.message);
-  }
-});
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.use(express.static(path.join(__dirname, 'public')))
+    .set('views', path.join(__dirname, 'views'))
+    .set('view engine', 'ejs')
+    .get('/', (req, res) => res.sendFile(path.join(__dirname+'/public/usPostalForm.html')))
+    .get('/getRate', handlePostalRate);
 
-function calculateRate(weight, type) {
-  if (weight <= 0) throw new Error('You must provide a weight greater than 0');
-  return CALC_FUNC[type](weight);
-}
 
-function calculateMetered(weight) {
-  return calculateIncremental(weight, 3.5, 0.47, 0.21);
-}
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-function calculateStamped(weight) {
-  return calculateIncremental(weight, 3.5, 0.5, 0.21);
-}
+function handlePostalRate(req, res) {
+    const weight = req.query.weight;
+    const type = req.query.type;
+    console.log(weight);
+    console.log(type);
+    var result;
+    switch (String(type)) {
+        case "letter-stamped"://Letters (Stamped)
+            if (weight > 3) {
+                result = 1.00;
+            } else {
+                result = 0.55 + (Math.floor(weight - 1) * .15);
+            }
+            break;
+        case "letter-metered"://Letters (Metered)
+            if (weight > 3) {
+                result = 0.95;
+            } else {
+                result = 0.50 + (Math.floor(weight - 1) * .15);
+            }
+            break;
+        case "large-envelope"://Large Envelopes (Flats)
+            result = 1 + (Math.floor(weight - 1) * .15);
+            break;
+        case "first-class-retail-package"://First-Class Package Service—Retail
+            if (weight > 12) {
+                result = 5.71;
+            } else if (weight >= 8) {
+                result = 5.19;
+            } else if (weight >= 4) {
+                result = 4.39;
+            } else {
+                result = 3.66;
+            }
+            break;
+        default:
+            console.log("error: no type specified");
+            break;
+    }
 
-function calculateFlats(weight) {
-  return calculateIncremental(weight, 13, 1.0, 0.21);
-}
+    const params = {weight: weight, type: type, result: result.toFixed(2)};
 
-function calculateParcel(weight) {
-  const FIRST_BREAK = 4;
-  const SECOND_BREAK = 8;
-  const UPPER_LIMIT = 13;
-  if (weight >= UPPER_LIMIT)
-    throw new Error(`Weight is too high. Must be less than ${UPPER_LIMIT}`);
-  if (weight < FIRST_BREAK) return 3.5;
-  if (weight < SECOND_BREAK) return 3.75;
-  return calculateIncremental(
-    weight - SECOND_BREAK,
-    UPPER_LIMIT - SECOND_BREAK,
-    4.1,
-    0.35,
-  );
-}
-
-function calculateIncremental(weight, upper_limit, base_rate, incr) {
-  const UPPER_LIMIT = upper_limit;
-  if (weight >= UPPER_LIMIT)
-    throw new Error(`Weight is too high. Must be less than ${UPPER_LIMIT}`);
-
-  const BASE_RATE = base_rate;
-  const INCR = incr;
-  let result = 0.0;
-  let breakWeight = Math.trunc(weight);
-  return BASE_RATE + breakWeight * INCR;
+    res.render("pages/postalRate", params);
 }
